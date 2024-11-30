@@ -1,0 +1,31 @@
+---
+const academicSection = {
+    degree: "Master's in Computer Science",
+    specialization: "Distributed Systems & Cloud Computing",
+    achievements: [
+        "Published research on distributed systems optimization",
+        "Led graduate research team on cloud computing",
+        "Awarded Academic Excellence Scholarship",
+        "Perfect GPA in Advanced System Design",
+    ],
+};
+---
+
+<section class="mb-12 highlight-box p-6">
+    <h2 class="font-['Playfair_Display'] text-2xl font-bold mb-4">
+        ACADEMIC DISPATCH
+    </h2>
+    <h3 class="text-xl font-bold mb-2">
+        {academicSection.degree}
+    </h3>
+    <p class="italic mb-4">
+        {academicSection.specialization}
+    </p>
+    <ul class="space-y-2">
+        {
+            academicSection.achievements.map((achievement) => (
+                <li class="vintage-text">• {achievement}</li>
+            ))
+        }
+    </ul>
+</section>

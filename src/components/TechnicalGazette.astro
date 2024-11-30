@@ -1,0 +1,55 @@
+---
+const technicalSections = [
+    {
+        category: "BACKEND MASTERY",
+        expertise: [
+            "Distributed Systems Design",
+            "Cloud Architecture (AWS, Azure)",
+            "Microservices Architecture",
+            "High-Performance Computing",
+        ],
+    },
+    {
+        category: "SYSTEM ENGINEERING",
+        expertise: [
+            "Linux System Administration",
+            "DevOps & CI/CD Pipelines",
+            "Container Orchestration",
+            "Network Security",
+        ],
+    },
+    {
+        category: "SOFTWARE DEVELOPMENT",
+        expertise: [
+            "Clean Code Architecture",
+            "Design Patterns",
+            "Test-Driven Development",
+            "Performance Optimization",
+        ],
+    },
+];
+---
+
+<section class="mb-12">
+    <h2
+        class="font-['Playfair_Display'] text-3xl font-bold mb-6 pb-2 border-b-2 vintage-border"
+    >
+        TECHNICAL GAZETTE
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+            technicalSections.map((section) => (
+                <article class="newspaper-texture p-4">
+                    <h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">
+                        {section.category}
+                    </h3>
+                    <ul class="list-disc list-inside vintage-text">
+                        {section.expertise.map((skill) => (
+                            <li class="mb-1">{skill}</li>
+                        ))}
+                    </ul>
+                </article>
+            ))
+        }
+    </div>
+</section>

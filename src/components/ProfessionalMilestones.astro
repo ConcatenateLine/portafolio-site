@@ -1,0 +1,33 @@
+---
+const milestones = [
+    {
+        title: "Senior Cloud Architect",
+        description:
+            "Led the architectural design and implementation of a cloud-native platform serving millions of users.",
+    },
+    {
+        title: "System Performance Champion",
+        description:
+            "Optimized critical systems resulting in 300% performance improvement and 60% cost reduction.",
+    },
+    {
+        title: "Technical Leadership",
+        description:
+            "Mentored team of 10 engineers, established best practices, and drove technical excellence.",
+    },
+];
+---
+
+<div class="border-2 vintage-border p-6 mb-8 accent-bg">
+    <h2 class="font-['Playfair_Display'] text-2xl font-bold mb-3 text-center">
+        PROFESSIONAL MILESTONES
+    </h2>
+    {
+        milestones.map((milestone) => (
+            <article class="mb-6 border-b vintage-border pb-4">
+                <h3 class="font-bold mb-2">{milestone.title}</h3>
+                <p class="vintage-text">{milestone.description}</p>
+            </article>
+        ))
+    }
+</div>

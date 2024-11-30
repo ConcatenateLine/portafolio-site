@@ -1,0 +1,94 @@
+---
+import "../styles/vintage.css";
+import Masthead from "../components/Masthead.astro";
+import Footer from "../components/Footer.astro";
+import TechnicalForecast from "../components/TechnicalForecast.astro";
+import MainArticle from "../components/MainArticle.astro";
+import TechnicalGazette from "../components/TechnicalGazette.astro";
+import SpecialEdition from "../components/SpecialEdition.astro";
+import TechnicalPublications from "../components/TechnicalPublications.astro";
+import ProfessionalMilestones from "../components/ProfessionalMilestones.astro";
+import AcademicDispatch from "../components/AcademicDispatch.astro";
+import TechnicalAdvertisements from "../components/TechnicalAdvertisements.astro";
+import DeveloperPuzzleCorner from "../components/DeveloperPuzzleCorner.astro";
+
+const currentDate = new Date().toLocaleDateString("en-US", {
+	weekday: "long",
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+
+const mainProject = {
+	title: "REVOLUTIONARY CLOUD ARCHITECTURE DEPLOYMENT",
+	subtitle: "Senior Software Engineer Pioneers Scalable Solutions",
+	description:
+		"Architected and implemented a high-performance distributed system handling 10M+ daily transactions. Reduced infrastructure costs by 60% while improving response times by 300%.",
+	image: "/project-main.jpg",
+	quote: "A masterclass in modern cloud architecture and distributed systems design",
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>The Software Chronicle</title>
+	</head>
+	<body class="vintage-bg">
+		<Masthead currentDate={currentDate} />
+
+		<!-- Main Content -->
+		<main class="max-w-7xl mx-auto bg-white shadow-lg p-8">
+			<TechnicalForecast />
+
+			<!-- Vintage Separator -->
+			<div class="vintage-separator"></div>
+
+			<!-- Quote of the Day -->
+			<div class="vintage-quote mb-8">
+				"In the realm of code, elegance is not optional; it's a
+				necessity."
+			</div>
+
+			<!-- Grid Layout with Vintage Frames -->
+			<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+				<!-- Main Column -->
+				<div class="md:col-span-8">
+					<MainArticle mainProject={mainProject} />
+					<TechnicalGazette />
+					<SpecialEdition />
+					<DeveloperPuzzleCorner />
+					<TechnicalAdvertisements />
+					<AcademicDispatch />
+				</div>
+
+				<!-- Side Column -->
+				<div class="md:col-span-4">
+					<ProfessionalMilestones />
+					<TechnicalPublications />
+				</div>
+			</div>
+
+			<Footer />
+		</main>
+
+		<!-- Fun Footer Notice -->
+		<div class="text-center text-xs italic mt-8 mb-4">
+			<p>
+				Warning: Reading this portfolio may cause sudden urges to
+				refactor code and optimize algorithms
+			</p>
+			<p class="mt-1">
+				Side effects may include improved coding practices and an
+				appreciation for clean architecture
+			</p>
+		</div>
+	</body>
+</html>

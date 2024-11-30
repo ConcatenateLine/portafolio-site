@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Bug with Code Pattern -->
+    <g transform="translate(150,150)">
+        <!-- Bug Body -->
+        <circle cx="0" cy="0" r="40" fill="#f4f1ea" stroke="#2b2b2b" stroke-width="3"/>
+        
+        <!-- Bug Legs -->
+        <path d="M-20 -20 L-40 -40" stroke="#2b2b2b" stroke-width="3" fill="none"/>
+        <path d="M20 -20 L40 -40" stroke="#2b2b2b" stroke-width="3" fill="none"/>
+        <path d="M-30 0 L-50 0" stroke="#2b2b2b" stroke-width="3" fill="none"/>
+        <path d="M30 0 L50 0" stroke="#2b2b2b" stroke-width="3" fill="none"/>
+        <path d="M-20 20 L-40 40" stroke="#2b2b2b" stroke-width="3" fill="none"/>
+        <path d="M20 20 L40 40" stroke="#2b2b2b" stroke-width="3" fill="none"/>
+        
+        <!-- Bug Face -->
+        <circle cx="-10" cy="-10" r="5" fill="#2b2b2b"/>
+        <circle cx="10" cy="-10" r="5" fill="#2b2b2b"/>
+        <path d="M-10 10 C-5 15 5 15 10 10" stroke="#2b2b2b" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Magnifying Glass -->
+    <g transform="translate(200,200) rotate(-45)">
+        <circle cx="0" cy="0" r="30" fill="none" stroke="#2b2b2b" stroke-width="4"/>
+        <line x1="25" y1="25" x2="60" y2="60" stroke="#2b2b2b" stroke-width="6"/>
+    </g>
+    
+    <!-- Code Snippets -->
+    <text x="50" y="50" font-family="monospace" font-size="12" fill="#2b2b2b">{bug?}</text>
+    <text x="200" y="80" font-family="monospace" font-size="12" fill="#2b2b2b">debug;</text>
+    <text x="100" y="250" font-family="monospace" font-size="12" fill="#2b2b2b">console.log()</text>
+</svg>

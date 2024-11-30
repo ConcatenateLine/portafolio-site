@@ -1,0 +1,51 @@
+---
+const { currentDate } = Astro.props;
+---
+
+<div>
+    <!-- Masthead -->
+    <header class="bg-white border-b-4 vintage-border">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <!-- Newspaper Header -->
+            <div class="newspaper-header">
+                <div class="newspaper-date">
+                    <span>Vol. 1, No. 1</span>
+                    <span>{currentDate}</span>
+                    <span>Evening Edition</span>
+                </div>
+                <div class="newspaper-price">PRICE: HIRE ME</div>
+                <h1 class="font-['Playfair_Display'] text-6xl font-bold mb-2">
+                    THE DEVELOPER CHRONICLE
+                </h1>
+                <div class="text-sm uppercase tracking-widest mb-2">
+                    "All the Code That's Fit to Print"
+                </div>
+                <div class="flex justify-center items-center gap-4 text-sm">
+                    <span class="column-rule">Silicon Valley Bureau</span>
+                    <span class="column-rule">Cloud Computing Desk</span>
+                    <span>Technical Affairs Department</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="bg-[#2b2b2b] text-[#f4f1ea] py-2 overflow-hidden">
+        <div class="breaking-news-ticker">
+            <div class="ticker-content">
+                <span class="mr-8">
+                    BREAKING: New Cloud Architecture Project Launched
+                </span>
+                <span class="mr-8">
+                    SYSTEM PERFORMANCE IMPROVED BY 300%
+                </span>
+                <span class="mr-8">
+                    AWARDED "ENGINEER OF THE MONTH"
+                </span>
+                <span class="mr-8">
+                    LATEST PROJECT: DISTRIBUTED SYSTEMS AT SCALE
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

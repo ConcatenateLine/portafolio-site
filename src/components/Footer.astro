@@ -1,0 +1,26 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+    <!-- Final Edition Notice -->
+    <div class="vintage-separator"></div>
+    <div class="text-center text-sm italic mt-8">
+        <p>"This portfolio is typeset in Playfair Display and Source Serif Pro"</p>
+        <p class="mt-2"> {currentYear} The Developer Chronicle. All Rights Reserved.</p>
+    </div>
+
+    <!-- Add page fold effect -->
+    <div class="page-fold"></div>
+
+    <!-- Add random coffee stains -->
+    <div class="coffee-stain" style="top: 20%; left: 15%; transform: scale(0.8) rotate(30deg);"></div>
+    <div class="coffee-stain" style="bottom: 30%; right: 10%; transform: scale(1.2) rotate(-15deg);"></div>
+
+    <!-- Add vintage page number -->
+    <div class="text-center mt-8 mb-4">
+        <div class="inline-block border-t border-b vintage-border px-4 py-2">
+            <span class="text-sm font-serif">~ 1 ~</span>
+        </div>
+    </div>
+</footer>

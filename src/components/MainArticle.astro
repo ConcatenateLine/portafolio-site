@@ -1,0 +1,38 @@
+---
+interface Props {
+    mainProject: {
+        title: string;
+        subtitle: string;
+        image: string;
+        description: string;
+        quote: string;
+    };
+}
+
+const { mainProject } = Astro.props;
+---
+
+<article class="border-b-2 vintage-border pb-8 mb-8">
+    <h2 class="font-['Playfair_Display'] text-5xl font-bold mb-3 leading-tight vintage-text">
+        {mainProject.title}
+    </h2>
+    <h3 class="text-xl mb-4 font-serif italic">
+        {mainProject.subtitle}
+    </h3>
+    <div class="mb-6">
+        <img
+            src={mainProject.image}
+            alt="System Architecture Diagram"
+            class="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-300"
+        />
+        <p class="text-sm text-gray-600 mt-2 italic">
+            Advanced System Architecture Visualization
+        </p>
+    </div>
+    <p class="text-gray-800 text-lg leading-relaxed font-serif mb-4">
+        {mainProject.description}
+    </p>
+    <blockquote class="border-l-4 vintage-border pl-4 italic text-lg">
+        {mainProject.quote}
+    </blockquote>
+</article>

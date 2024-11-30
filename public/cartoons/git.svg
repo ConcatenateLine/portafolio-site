@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Git Branch Tree -->
+    <path d="M150 50 L150 250" stroke="#2b2b2b" stroke-width="4" fill="none"/>
+    <path d="M150 100 L220 150" stroke="#2b2b2b" stroke-width="4" fill="none"/>
+    <path d="M150 100 L80 150" stroke="#2b2b2b" stroke-width="4" fill="none"/>
+    
+    <!-- Circles representing commits -->
+    <circle cx="150" cy="50" r="10" fill="#f4f1ea" stroke="#2b2b2b" stroke-width="3"/>
+    <circle cx="150" cy="100" r="10" fill="#f4f1ea" stroke="#2b2b2b" stroke-width="3"/>
+    <circle cx="220" cy="150" r="10" fill="#f4f1ea" stroke="#2b2b2b" stroke-width="3"/>
+    <circle cx="80" cy="150" r="10" fill="#f4f1ea" stroke="#2b2b2b" stroke-width="3"/>
+    <circle cx="150" cy="250" r="10" fill="#f4f1ea" stroke="#2b2b2b" stroke-width="3"/>
+    
+    <!-- Merge Conflict Symbol -->
+    <g transform="translate(150, 175)">
+        <path d="M0 -20 L20 20 L-20 20 Z" fill="#e8e1d5" stroke="#2b2b2b" stroke-width="3"/>
+        <text x="0" y="10" font-family="Arial" font-size="20" text-anchor="middle">!</text>
+    </g>
+    
+    <!-- Branch Labels -->
+    <text x="230" y="140" font-family="Arial" font-size="12">feature</text>
+    <text x="60" y="140" font-family="Arial" font-size="12">main</text>
+</svg>
