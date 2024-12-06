@@ -1,46 +1,77 @@
+:root {
+    /* Light theme variables */
+    --bg-color: #f4f1ea;
+    --bg-accent: #fff9e6;
+    --text-color: #2c2c2c;
+    --text-color-muted: #666666;
+    --border-color: #d4d4d4;
+    --vintage-secondary-bg: #e8e1d5;
+    --vintage-shadow: rgba(0, 0, 0, 0.1);
+    --vintage-accent: #8b4513;
+}
+
+[data-theme='dark'] {
+    /* Rich dark sepia theme */
+    --bg-color: #1a1814;          /* Deep sepia-tinted black */
+    --bg-accent: #252017;         /* Slightly lighter sepia background */
+    --text-color: #e8d5b5;        /* Warm antique paper color */
+    --text-color-muted: #a89882;  /* Muted sepia tone */
+    --border-color: #483c2f;      /* Rich sepia border */
+    --vintage-secondary-bg: #483c2f;
+    --vintage-shadow: rgba(0, 0, 0, 0.4);
+    --vintage-accent: #c68d53;    /* Warm copper accent */
+}
+
+/* Apply theme variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .newspaper-texture {
-    background-color: #f4f1ea;
+    background-color: var(--bg-color);
     background-image: 
         linear-gradient(rgba(0,0,0,.03) .1em, transparent .1em);
     background-size: 100% 1.2em;
 }
 
 .vintage-border {
-    border-color: #2b2b2b;
+    border-color: var(--border-color);
 }
 
 .vintage-text {
-    color: #2b2b2b;
+    color: var(--text-color);
 }
 
 .vintage-bg {
-    background-color: #f4f1ea;
+    background-color: var(--bg-color);
 }
 
 .accent-bg {
-    background-color: #e8e1d5;
+    background-color: var(--bg-accent);
 }
 
 .highlight-box {
-    background-color: #fff9e6;
-    border: 1px solid #2b2b2b;
+    background-color: var(--bg-accent);
+    border: 1px solid var(--border-color);
 }
 
 .cartoon-panel {
-    background: #fff9e6;
-    border: 2px solid #2b2b2b;
+    background: var(--bg-accent);
+    border: 2px solid var(--border-color);
     padding: 1rem;
     transition: transform 0.2s ease;
 }
 
 .cartoon-panel:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px var(--vintage-shadow);
 }
 
 .comic-text {
     font-family: 'Playfair Display', serif;
-    color: #2b2b2b;
+    color: var(--text-color);
 }
 
 .breaking-news-ticker {
@@ -61,36 +92,43 @@
 
 .classified-ad {
     background-color: #fff9e6;
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--border-color);
     padding: 1rem;
 }
 
 .specs-column,
 .results-column,
 .column {
-    background-color: #f4f1ea;
+    background-color: var(--bg-color);
     padding: 1rem;
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--border-color);
 }
 
 .ad-box {
     background-color: #fff9e6;
-    border: 2px solid #2b2b2b;
+    border: 2px solid var(--border-color);
     padding: 1rem;
 }
 
 /* Vintage Decorative Elements */
 .vintage-separator {
-    height: 20px;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L20 10' stroke='%232b2b2b' stroke-width='1' stroke-dasharray='2,2'/%3E%3C/svg%3E");
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--border-color),
+        var(--border-color) 4px,
+        transparent 4px,
+        transparent 8px
+    );
     margin: 2rem 0;
+    opacity: 0.5;
 }
 
 .vintage-corner {
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 2px solid #2b2b2b;
+    border: 2px solid var(--border-color);
 }
 
 .corner-tl { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
@@ -105,7 +143,7 @@
 
 .newspaper-header {
     text-align: center;
-    border-bottom: 4px double #2b2b2b;
+    border-bottom: 4px double var(--border-color);
     margin-bottom: 2rem;
     padding-bottom: 1rem;
 }
@@ -115,24 +153,24 @@
     justify-content: space-between;
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #2b2b2b;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
 .newspaper-price {
     font-family: 'Playfair Display', serif;
     font-size: 0.875rem;
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--border-color);
     padding: 0.25rem 0.5rem;
     display: inline-block;
     transform: rotate(-5deg);
     position: absolute;
-    top: 1rem;
+    top: -2rem;
     right: 1rem;
 }
 
 .column-rule {
-    border-right: 1px solid #2b2b2b;
+    border-right: 1px solid var(--border-color);
     padding-right: 1rem;
     margin-right: 1rem;
 }
@@ -144,6 +182,7 @@
     text-align: center;
     padding: 2rem;
     position: relative;
+    color: var(--vintage-accent);
 }
 
 .vintage-quote::before,
@@ -151,7 +190,7 @@
     content: '"';
     font-size: 3rem;
     position: absolute;
-    color: #2b2b2b;
+    color: var(--vintage-accent);
     opacity: 0.2;
 }
 
@@ -181,7 +220,7 @@
     right: -10px;
     width: 80px;
     height: 80px;
-    border: 2px solid #2b2b2b;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -208,13 +247,33 @@
     left: 0;
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #2b2b2b 0%, #2b2b2b 50%, transparent 50%);
+    background: linear-gradient(135deg, var(--border-color) 0%, var(--border-color) 50%, transparent 50%);
     opacity: 0.1;
 }
 
 .vintage-border-pattern {
-    border: 8px solid #2b2b2b;
-    border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L100,0 L100,100 L0,100 Z' fill='none' stroke='%232b2b2b' stroke-width='8' stroke-dasharray='15,15'/%3E%3C/svg%3E") 30;
+    position: relative;
+    border: none;
+    padding: 8px;
+    background: 
+        linear-gradient(45deg, var(--border-color) 25%, transparent 25%) -15px 0,
+        linear-gradient(-45deg, var(--border-color) 25%, transparent 25%) -15px 0,
+        linear-gradient(45deg, transparent 75%, var(--border-color) 75%) -15px 0,
+        linear-gradient(-45deg, transparent 75%, var(--border-color) 75%) -15px 0;
+    background-size: 30px 30px;
+    background-clip: content-box;
+    box-shadow: 
+        0 0 0 2px var(--border-color),
+        inset 0 0 0 2px var(--border-color);
+    opacity: 0.7;
+}
+
+.vintage-border-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    background: var(--bg-accent);
+    z-index: -1;
 }
 
 .vintage-paper-texture {
@@ -227,8 +286,8 @@
     letter-spacing: 0.1em;
     text-align: center;
     padding: 1rem 0;
-    border-top: 2px solid #2b2b2b;
-    border-bottom: 2px solid #2b2b2b;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
     margin: 2rem 0;
 }
 
@@ -241,20 +300,20 @@
 
 .vintage-table th,
 .vintage-table td {
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--border-color);
     padding: 0.5rem;
     text-align: left;
 }
 
 .vintage-table th {
-    background: #f4f1ea;
+    background: var(--bg-color);
     font-weight: bold;
 }
 
 .vintage-footnote {
     font-size: 0.75rem;
     font-style: italic;
-    border-top: 1px solid #2b2b2b;
+    border-top: 1px solid var(--border-color);
     padding-top: 0.5rem;
     margin-top: 1rem;
 }
@@ -262,11 +321,11 @@
 .vintage-badge {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--border-color);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    background: #fff9e6;
+    background: var(--bg-accent);
     transform: rotate(-2deg);
     margin: 0 0.5rem;
 }
@@ -285,7 +344,7 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background: #2b2b2b;
+    background: var(--border-color);
     border-radius: 50%;
     opacity: 0.1;
     animation: ink-spread 2s infinite;
@@ -300,7 +359,7 @@
     height: 0;
     border-style: solid;
     border-width: 0 100px 100px 0;
-    border-color: transparent #2b2b2b transparent transparent;
+    border-color: transparent var(--border-color) transparent transparent;
     opacity: 0.1;
     pointer-events: none;
 }
@@ -324,7 +383,7 @@ body::before {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: #2b2b2b;
+    background: var(--border-color);
     border-radius: 50%;
     opacity: 0.05;
     transform: scale(1.2) rotate(45deg);
@@ -339,6 +398,6 @@ body::before {
     left: 10%;
     background: transparent;
     border-radius: 50%;
-    border: 2px solid #2b2b2b;
+    border: 2px solid var(--border-color);
     opacity: 0.1;
 }

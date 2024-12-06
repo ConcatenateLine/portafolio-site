@@ -2,31 +2,22 @@
 import "../styles/vintage.css";
 import Masthead from "../components/Masthead.astro";
 import Footer from "../components/Footer.astro";
-import TechnicalForecast from "../components/TechnicalForecast.astro";
 import MainArticle from "../components/MainArticle.astro";
 import TechnicalGazette from "../components/TechnicalGazette.astro";
 import SpecialEdition from "../components/SpecialEdition.astro";
 import TechnicalPublications from "../components/TechnicalPublications.astro";
 import ProfessionalMilestones from "../components/ProfessionalMilestones.astro";
-import AcademicDispatch from "../components/AcademicDispatch.astro";
 import TechnicalAdvertisements from "../components/TechnicalAdvertisements.astro";
 import DeveloperPuzzleCorner from "../components/DeveloperPuzzleCorner.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import SocialContact from "../components/SocialContact.astro";
+import { getCurrentFormattedDate } from "../utils/dateUtils";
+import { mainProject } from "../config/projects";
+import { siteContent } from "../config/content";
 
-const currentDate = new Date().toLocaleDateString("en-US", {
-	weekday: "long",
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-});
+const currentDate = getCurrentFormattedDate();
 
-const mainProject = {
-	title: "REVOLUTIONARY CLOUD ARCHITECTURE DEPLOYMENT",
-	subtitle: "Senior Software Engineer Pioneers Scalable Solutions",
-	description:
-		"Architected and implemented a high-performance distributed system handling 10M+ daily transactions. Reduced infrastructure costs by 60% while improving response times by 300%.",
-	image: "/project-main.jpg",
-	quote: "A masterclass in modern cloud architecture and distributed systems design",
-};
 ---
 
 <html lang="en">
@@ -39,56 +30,56 @@ const mainProject = {
 			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
-		<title>The Software Chronicle</title>
+		<title>{siteContent.meta.title}</title>
 	</head>
 	<body class="vintage-bg">
-		<Masthead currentDate={currentDate} />
+		<Masthead currentDate={currentDate}>
+			<ThemeToggle slot="right-top" />
+		</Masthead>
 
 		<!-- Main Content -->
-		<main class="max-w-7xl mx-auto bg-white shadow-lg p-8">
-			<TechnicalForecast />
-
-			<!-- Vintage Separator -->
-			<div class="vintage-separator"></div>
+		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8">
 
 			<!-- Quote of the Day -->
 			<div class="vintage-quote mb-8">
-				"In the realm of code, elegance is not optional; it's a
-				necessity."
+				{siteContent.quotes.mainQuote}
 			</div>
+
+			<!-- Vintage Separator -->
+			<div class="vintage-separator"></div>
 
 			<!-- Grid Layout with Vintage Frames -->
 			<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
 				<!-- Main Column -->
 				<div class="md:col-span-8">
 					<MainArticle mainProject={mainProject} />
+					<ProjectsSection />
 					<TechnicalGazette />
 					<SpecialEdition />
 					<DeveloperPuzzleCorner />
 					<TechnicalAdvertisements />
-					<AcademicDispatch />
 				</div>
 
 				<!-- Side Column -->
 				<div class="md:col-span-4">
 					<ProfessionalMilestones />
 					<TechnicalPublications />
+					<SocialContact />
 				</div>
 			</div>
 
-			<Footer />
+			<Footer pageNumber={1} />
+
+			<!-- Fun Footer Notice -->
+			<div class="text-center text-xs italic mt-8 mb-4">
+				<p>
+					{siteContent.footer.warning}
+				</p>
+				<p class="mt-1">
+					{siteContent.footer.sideEffects}
+				</p>
+			</div>
 		</main>
 
-		<!-- Fun Footer Notice -->
-		<div class="text-center text-xs italic mt-8 mb-4">
-			<p>
-				Warning: Reading this portfolio may cause sudden urges to
-				refactor code and optimize algorithms
-			</p>
-			<p class="mt-1">
-				Side effects may include improved coding practices and an
-				appreciation for clean architecture
-			</p>
-		</div>
 	</body>
 </html>

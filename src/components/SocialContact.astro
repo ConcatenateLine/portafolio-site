@@ -1,0 +1,83 @@
+---
+import { languageStore } from '../store/languageStore';
+
+const t = (key: string) => languageStore.translate(key);
+---
+
+<div class="vintage-frame mb-8 p-6">
+    <div class="vintage-corner corner-tl"></div>
+    <div class="vintage-corner corner-tr"></div>
+    <div class="vintage-corner corner-bl"></div>
+    <div class="vintage-corner corner-br"></div>
+
+    <!-- Section Title -->
+    <h3 class="text-xl font-bold mb-6 text-center uppercase tracking-wider">
+        {t('social.title')}
+    </h3>
+
+    <!-- Social Links -->
+    <div class="space-y-4">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-3 hover:text-accent transition-colors">
+            <span class="vintage-icon">✦</span>
+            <span class="flex-1">GitHub</span>
+            <span class="vintage-date text-xs">{t('social.follow')}</span>
+        </a>
+        
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-3 hover:text-accent transition-colors">
+            <span class="vintage-icon">✦</span>
+            <span class="flex-1">LinkedIn</span>
+            <span class="vintage-date text-xs">{t('social.connect')}</span>
+        </a>
+
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-3 hover:text-accent transition-colors">
+            <span class="vintage-icon">✦</span>
+            <span class="flex-1">Twitter</span>
+            <span class="vintage-date text-xs">{t('social.follow')}</span>
+        </a>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="mt-8">
+        <h4 class="text-lg font-bold mb-4 text-center">
+            {t('contact.title')}
+        </h4>
+        
+        <div class="space-y-4">
+            <a href="mailto:your.email@example.com" class="flex items-center gap-3 hover:text-accent transition-colors">
+                <span class="vintage-icon">✉</span>
+                <span class="flex-1">{t('contact.email')}</span>
+            </a>
+
+            <div class="vintage-card p-4 mt-4 text-sm">
+                <p class="italic text-center">{t('contact.availability')}</p>
+                <div class="text-center mt-2">
+                    <span class="vintage-date">{t('contact.status')}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.vintage-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+}
+
+.vintage-date {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--vintage-secondary-bg);
+    border: 1px solid var(--border-color);
+    font-weight: bold;
+}
+
+.vintage-card {
+    background-color: var(--vintage-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+</style>

@@ -1,0 +1,82 @@
+---
+import { languageStore } from '../store/languageStore';
+
+const t = (key: string) => languageStore.translate(key);
+---
+
+<section class="vintage-primary-bg vintage-border">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">{t('experience.title')}</h2>
+            <p class="text-xl">{t('experience.subtitle')}</p>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="space-y-8">
+            {Array.from({ length: 3 }).map((_, index) => (
+                <div class="vintage-card p-6 relative">
+                    <!-- Timeline Dot -->
+                    <div class="absolute -left-3 w-6 h-6 bg-black rounded-full border-4 vintage-border"></div>
+                    
+                    <!-- Job Header -->
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">{t(`experience.jobs.${index}.title`)}</h3>
+                            <p class="text-lg vintage-accent">{t(`experience.jobs.${index}.company`)}</p>
+                        </div>
+                        <span class="vintage-date">{t(`experience.jobs.${index}.period`)}</span>
+                    </div>
+                    
+                    <!-- Job Description -->
+                    <p class="mb-4 leading-relaxed">
+                        {t(`experience.jobs.${index}.description`)}
+                    </p>
+                    
+                    <!-- Achievements -->
+                    <div class="space-y-2">
+                        {Array.from({ length: 3 }).map((_, achievementIndex) => (
+                            <div class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <p>{t(`experience.jobs.${index}.achievements.${achievementIndex}`)}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+.vintage-card {
+    background-color: var(--vintage-light);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.vintage-card::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 2rem;
+    bottom: -2rem;
+    width: 2px;
+    background-color: var(--border-color);
+    z-index: -1;
+}
+
+.vintage-card:last-child::before {
+    display: none;
+}
+
+.vintage-date {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--vintage-secondary-bg);
+    border: 1px solid var(--border-color);
+    font-weight: bold;
+}
+</style>

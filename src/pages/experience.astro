@@ -1,0 +1,55 @@
+---
+import "../styles/vintage.css";
+import Masthead from "../components/Masthead.astro";
+import Footer from "../components/Footer.astro";
+import ExperienceSection from "../components/Experience.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import { getCurrentFormattedDate } from "../utils/dateUtils";
+import { siteContent } from "../config/content";
+import AcademicDispatch from "../components/AcademicDispatch.astro";
+import TechnicalForecast from "../components/TechnicalForecast.astro";
+
+const currentDate = getCurrentFormattedDate();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>{siteContent.meta.title} - Experience</title>
+	</head>
+	<body class="vintage-bg">
+		<Masthead currentDate={currentDate}>
+			<ThemeToggle slot="right-top" />
+		</Masthead>
+
+		<!-- Main Content -->
+		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8">
+			<TechnicalForecast />
+
+			<!-- Experience Section -->
+			<ExperienceSection />
+
+			<AcademicDispatch />
+
+			<Footer pageNumber={2} />
+
+			<!-- Fun Footer Notice -->
+			<div class="text-center text-xs italic mt-8 mb-4">
+				<p>
+					{siteContent.footer.warning}
+				</p>
+				<p class="mt-1">
+					{siteContent.footer.sideEffects}
+				</p>
+			</div>
+		</main>
+
+	</body>
+</html>

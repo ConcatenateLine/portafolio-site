@@ -1,29 +1,36 @@
 ---
+import { languageStore } from '../store/languageStore';
+import LanguageToggle from './LanguageToggle.astro';
+
 const { currentDate } = Astro.props;
+const t = (key: string) => languageStore.translate(key)
 ---
 
 <div>
     <!-- Masthead -->
-    <header class="bg-white border-b-4 vintage-border">
+    <header class="vintage-secondary-bg border-b-4 vintage-border">
         <div class="max-w-7xl mx-auto px-4 py-6">
             <!-- Newspaper Header -->
             <div class="newspaper-header">
                 <div class="newspaper-date">
                     <span>Vol. 1, No. 1</span>
                     <span>{currentDate}</span>
-                    <span>Evening Edition</span>
+                    <span class="flex gap-4 items-center">
+                        <slot name="right-top" />
+                        <LanguageToggle />
+                    </span>
                 </div>
-                <div class="newspaper-price">PRICE: HIRE ME</div>
                 <h1 class="font-['Playfair_Display'] text-6xl font-bold mb-2">
-                    THE DEVELOPER CHRONICLE
+                    {t('header.title')}
                 </h1>
                 <div class="text-sm uppercase tracking-widest mb-2">
-                    "All the Code That's Fit to Print"
+                    {t('header.subtitle')}
                 </div>
-                <div class="flex justify-center items-center gap-4 text-sm">
-                    <span class="column-rule">Silicon Valley Bureau</span>
-                    <span class="column-rule">Cloud Computing Desk</span>
-                    <span>Technical Affairs Department</span>
+                <div class="flex relative justify-center items-center gap-4 text-sm">
+                    <a href="/"><span class="column-rule">{t('header.departments.bureau')}</span></a>
+                    <a href="/experience"><span class="column-rule">{t('header.departments.cloud')}</span></a>
+                    <a href="/"><span>{t('header.departments.tech')}</span></a>
+                    <div class="newspaper-price">{t('header.price')}</div>
                 </div>
             </div>
         </div>

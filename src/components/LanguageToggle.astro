@@ -1,0 +1,46 @@
+---
+---
+
+<button id="language-toggle" class="language-toggle-btn" aria-label="Toggle language">
+    <span id="current-language">EN</span>
+</button>
+
+<script>
+import { languageStore } from '../store/languageStore';
+
+// Initialize the button text
+const toggleBtn = document.getElementById('language-toggle');
+const langSpan = document.getElementById('current-language');
+
+if (langSpan) {
+    langSpan.textContent = languageStore.getCurrentLanguage().toUpperCase();
+}
+
+// Add click handler
+toggleBtn?.addEventListener('click', () => {
+    const currentLang = languageStore.getCurrentLanguage();
+    const newLang = currentLang === 'en' ? 'es' : 'en';
+    languageStore.setLanguage(newLang);
+    
+    if (langSpan) {
+        langSpan.textContent = newLang.toUpperCase();
+    }   
+
+    window.location.reload();
+});
+</script>
+
+<style>
+.language-toggle-btn {
+    background: transparent;
+    border: 2px solid currentColor;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+</style>
