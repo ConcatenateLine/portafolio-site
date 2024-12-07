@@ -17,7 +17,6 @@ import { mainProject } from "../config/projects";
 import { siteContent } from "../config/content";
 
 const currentDate = getCurrentFormattedDate();
-
 ---
 
 <html lang="en">
@@ -33,38 +32,54 @@ const currentDate = getCurrentFormattedDate();
 		<title>{siteContent.meta.title}</title>
 	</head>
 	<body class="vintage-bg">
+		<div class="vintage-corner-topleft"></div>
 		<Masthead currentDate={currentDate}>
 			<ThemeToggle slot="right-top" />
 		</Masthead>
 
 		<!-- Main Content -->
-		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8">
-
-			<!-- Quote of the Day -->
-			<div class="vintage-quote mb-8">
-				{siteContent.quotes.mainQuote}
+		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8 relative">
+			<!-- Vintage Paper Texture Overlay -->
+			<div
+				class="absolute inset-0 vintage-paper-texture opacity-30 pointer-events-none"
+			>
 			</div>
 
-			<!-- Vintage Separator -->
-			<div class="vintage-separator"></div>
+			<!-- Quote of the Day with Vintage Frame -->
+			<div class="vintage-frame mb-8">
+				<div class="vintage-quote">
+					{siteContent.quotes.mainQuote}
+				</div>
+			</div>
+
+			<!-- Vintage Separator with Ornaments -->
+			<div class="flex items-center justify-center my-8">
+				<div class="vintage-ornament"></div>
+				<div class="vintage-separator mx-4 flex-grow"></div>
+				<div class="vintage-ornament"></div>
+			</div>
 
 			<!-- Grid Layout with Vintage Frames -->
 			<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
 				<!-- Main Column -->
 				<div class="md:col-span-8">
-					<MainArticle mainProject={mainProject} />
-					<ProjectsSection />
-					<TechnicalGazette />
-					<SpecialEdition />
-					<DeveloperPuzzleCorner />
-					<TechnicalAdvertisements />
+					<div>
+						<MainArticle mainProject={mainProject} />
+						<ProjectsSection />
+						<TechnicalGazette />
+						<SpecialEdition />
+						<DeveloperPuzzleCorner />
+						<TechnicalAdvertisements />
+					</div>
 				</div>
 
-				<!-- Side Column -->
+				<!-- Side Column with Vintage Border -->
 				<div class="md:col-span-4">
-					<ProfessionalMilestones />
-					<TechnicalPublications />
-					<SocialContact />
+					<div class="vintage-sidebar">
+						<ProfessionalMilestones />
+						<TechnicalPublications />
+						<SocialContact />
+					</div>
 				</div>
 			</div>
 
@@ -80,6 +95,6 @@ const currentDate = getCurrentFormattedDate();
 				</p>
 			</div>
 		</main>
-
+		<div class="vintage-corner-bottomright"></div>
 	</body>
 </html>

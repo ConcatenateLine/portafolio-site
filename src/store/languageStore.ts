@@ -39,7 +39,7 @@ class LanguageStore {
         }
     }
 
-    public translate(key: string): string {
+    public translate(key: string): string | Array<string> {
         const keys = key.split('.');
         let value: any = translations[this.currentLanguage];
         
@@ -51,7 +51,7 @@ class LanguageStore {
             }
         }
         
-        return typeof value === 'string' ? value : key;
+        return value || key;
     }
 }
 

@@ -25,6 +25,8 @@ const currentDate = getCurrentFormattedDate();
 		<title>{siteContent.meta.title} - Experience</title>
 	</head>
 	<body class="vintage-bg">
+		<div class="vintage-corner-topright"></div>
+
 		<Masthead currentDate={currentDate}>
 			<ThemeToggle slot="right-top" />
 		</Masthead>
@@ -32,6 +34,13 @@ const currentDate = getCurrentFormattedDate();
 		<!-- Main Content -->
 		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8">
 			<TechnicalForecast />
+
+			<!-- Vintage Separator with Ornaments -->
+			<div class="flex items-center justify-center my-8">
+				<div class="vintage-ornament"></div>
+				<div class="vintage-separator mx-4 flex-grow"></div>
+				<div class="vintage-ornament"></div>
+			</div>
 
 			<!-- Experience Section -->
 			<ExperienceSection />
@@ -50,6 +59,6 @@ const currentDate = getCurrentFormattedDate();
 				</p>
 			</div>
 		</main>
-
+		<div class="vintage-corner-bottomleft"></div>
 	</body>
 </html>

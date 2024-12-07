@@ -7,9 +7,9 @@ export const translations = {
             subtitle: "All the Code That's Fit to Print",
             price: "PRICE: HIRE ME",
             departments: {
-                bureau: "Silicon Valley Bureau",
-                cloud: "Cloud Computing Desk",
-                tech: "Technical Affairs Department"
+                bureau: "The Innovation Times & Project Press",
+                cloud: "The Code Archives & Career Gazette",
+                tech: "The Tech Telegraph & Life Bytes"
             },
             nav: {
                 home: "Home",
@@ -66,6 +66,17 @@ export const translations = {
                 }
             ]
         },
+        academic: {
+            title: "ACADEMIC DISPATCH",
+            degree: "Master's in Computer Science",
+            specialization: "Distributed Systems & Cloud Computing",
+            achievements: [
+                "Published research on distributed systems optimization",
+                "Led graduate research team on cloud computing",
+                "Awarded Academic Excellence Scholarship",
+                "Perfect GPA in Advanced System Design"
+            ]
+        },
         theme: {
             morning: "Morning edition",
             evening: "Evening edition"
@@ -104,9 +115,9 @@ export const translations = {
             subtitle: "Todo el Código que Vale la Pena Imprimir",
             price: "PRECIO: CONTRÁTAME",
             departments: {
-                bureau: "Oficina de Silicon Valley",
-                cloud: "Departamento de Computación en la Nube",
-                tech: "Departamento de Asuntos Técnicos"
+                bureau: "La Gaceta de Innovación & Proyectos",
+                cloud: "Archivos de Código & Crónicas Profesionales",
+                tech: "El Telégrafo Tech & Bytes de Vida"
             },
             nav: {
                 home: "Inicio",
@@ -161,6 +172,17 @@ export const translations = {
                         "Reduje el conteo de errores en un 80% mediante TDD"
                     ]
                 }
+            ]
+        },
+        academic: {
+            title: "DESPACHO ACADÉMICO",
+            degree: "Maestría en Ciencias de la Computación",
+            specialization: "Sistemas Distribuidos & Computación en la Nube",
+            achievements: [
+                "Investigación publicada sobre optimización de sistemas distribuidos",
+                "Líder del equipo de investigación en computación en la nube",
+                "Beca de Excelencia Académica",
+                "GPA perfecto en Diseño Avanzado de Sistemas"
             ]
         },
         theme: {
