@@ -1,42 +1,70 @@
 ---
-import { projects } from '../config/projects';
+import { t } from "../utils/translateUtils";
+import TranslationScript from "./TranslationScript.astro";
 ---
 
 <section class="border-b-2 vintage-border pb-8 mb-8">
-    <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold mb-6 vintage-text">
-        TECHNICAL PORTFOLIO HIGHLIGHTS
+    <h2
+        class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold mb-6 vintage-text"
+        data-translate="sections.projects"
+    >
+        {t("sections.projects")}
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project) => (
-            <article class="vintage-border-pattern p-6">
-                <div class="mb-4">
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                </div>
-                <h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">
-                    {project.title}
-                </h3>
-                <h4 class="text-base mb-3 font-serif italic text-muted">
-                    {project.subtitle}
-                </h4>
-                <p class="text-base mb-4 leading-relaxed">
-                    {project.description}
-                </p>
-                {project.technologies && (
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.map((tech) => (
-                            <span class="vintage-badge">{tech}</span>
-                        ))}
+        {
+            Array.from({ length: 2 }).map((_, index) => (
+                <article class="vintage-border-pattern p-6">
+                    <div class="mb-4">
+                        <img
+                            src={t(`projects.${index}.image`)}
+                            alt={t(`projects.${index}.title`)}
+                            data-translate={`projects.${index}.title`}
+                            class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                        />
                     </div>
-                )}
-                <blockquote class="border-l-4 vintage-border pl-4 italic">
-                    {project.quote}
-                </blockquote>
-            </article>
-        ))}
+                    <h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">
+                        <a
+                            href={t(`projects.${index}.link`)}
+                            target="_blank"
+                            data-translate={`projects.${index}.title`}
+                        >
+                            {t(`projects.${index}.title`)}
+                        </a>
+                    </h3>
+                    <h4
+                        class="text-base mb-3 font-serif italic text-muted"
+                        data-translate={`projects.${index}.subtitle`}
+                    >
+                        {t(`projects.${index}.subtitle`)}
+                    </h4>
+                    <p
+                        class="text-base mb-4 leading-relaxed"
+                        data-translate={`projects.${index}.description`}
+                    >
+                        {t(`projects.${index}.description`)}
+                    </p>
+                    {
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {Array.from({ length: 4 }).map((_, techIndex) => (
+                                <span class="vintage-badge">
+                                    {t(
+                                        `projects.${index}.technologies.${techIndex}`,
+                                    )}
+                                </span>
+                            ))}
+                        </div>
+                    }
+                    <blockquote
+                        class="border-l-4 vintage-border pl-4 italic"
+                        data-translate={`projects.${index}.quote`}
+                    >
+                        {t(`projects.${index}.quote`)}
+                    </blockquote>
+                </article>
+            ))
+        }
     </div>
 </section>
+
+<TranslationScript />

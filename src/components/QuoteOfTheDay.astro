@@ -1,0 +1,13 @@
+---
+import { t } from "../utils/translateUtils"; // Import the translation function
+import TranslationScript from "./TranslationScript.astro";
+---
+
+<!-- Quote of the Day with Vintage Frame -->
+<div class="vintage-frame mb-8">
+    <div class="vintage-quote" data-translate="quotes.mainQuote">
+        {t("quotes.mainQuote")}
+    </div>
+</div>
+
+<TranslationScript />

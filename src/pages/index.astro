@@ -4,19 +4,14 @@ import Masthead from "../components/Masthead.astro";
 import Footer from "../components/Footer.astro";
 import MainArticle from "../components/MainArticle.astro";
 import TechnicalGazette from "../components/TechnicalGazette.astro";
-import SpecialEdition from "../components/SpecialEdition.astro";
-import TechnicalPublications from "../components/TechnicalPublications.astro";
-import ProfessionalMilestones from "../components/ProfessionalMilestones.astro";
-import TechnicalAdvertisements from "../components/TechnicalAdvertisements.astro";
-import DeveloperPuzzleCorner from "../components/DeveloperPuzzleCorner.astro";
+// import TechnicalPublications from "../components/TechnicalPublications.astro";
+// import ProfessionalMilestones from "../components/ProfessionalMilestones.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
 import SocialContact from "../components/SocialContact.astro";
-import { getCurrentFormattedDate } from "../utils/dateUtils";
-import { mainProject } from "../config/projects";
 import { siteContent } from "../config/content";
-
-const currentDate = getCurrentFormattedDate();
+import FooterNotice from "../components/FooterNotice.astro";
+import QuoteOfTheDay from "../components/QuoteOfTheDay.astro";
 ---
 
 <html lang="en">
@@ -33,7 +28,7 @@ const currentDate = getCurrentFormattedDate();
 	</head>
 	<body class="vintage-bg">
 		<div class="vintage-corner-topleft"></div>
-		<Masthead currentDate={currentDate}>
+		<Masthead>
 			<ThemeToggle slot="right-top" />
 		</Masthead>
 
@@ -45,12 +40,7 @@ const currentDate = getCurrentFormattedDate();
 			>
 			</div>
 
-			<!-- Quote of the Day with Vintage Frame -->
-			<div class="vintage-frame mb-8">
-				<div class="vintage-quote">
-					{siteContent.quotes.mainQuote}
-				</div>
-			</div>
+			<QuoteOfTheDay />
 
 			<!-- Vintage Separator with Ornaments -->
 			<div class="flex items-center justify-center my-8">
@@ -64,36 +54,26 @@ const currentDate = getCurrentFormattedDate();
 				<!-- Main Column -->
 				<div class="md:col-span-8">
 					<div>
-						<MainArticle mainProject={mainProject} />
+						<MainArticle />
 						<ProjectsSection />
 						<TechnicalGazette />
-						<SpecialEdition />
-						<DeveloperPuzzleCorner />
-						<TechnicalAdvertisements />
 					</div>
 				</div>
 
 				<!-- Side Column with Vintage Border -->
 				<div class="md:col-span-4">
 					<div class="vintage-sidebar">
-						<ProfessionalMilestones />
-						<TechnicalPublications />
-						<SocialContact />
+						<!-- <ProfessionalMilestones /> -->
+						<!-- <TechnicalPublications /> -->
+						<SocialContact socials={siteContent.socials} />
 					</div>
 				</div>
 			</div>
 
 			<Footer pageNumber={1} />
 
-			<!-- Fun Footer Notice -->
-			<div class="text-center text-xs italic mt-8 mb-4">
-				<p>
-					{siteContent.footer.warning}
-				</p>
-				<p class="mt-1">
-					{siteContent.footer.sideEffects}
-				</p>
-			</div>
+			<!-- Other content -->
+			<FooterNotice />
 		</main>
 		<div class="vintage-corner-bottomright"></div>
 	</body>

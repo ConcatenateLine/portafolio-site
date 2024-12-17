@@ -3,11 +3,11 @@ export const siteContent = {
         title: "The Software Chronicle",
         language: "en",
     },
-    quotes: {
-        mainQuote: "In the realm of code, elegance is not optional; it's a necessity.",
+    socials: {
+        linkedin: "https://www.linkedin.com/in/josue-morales-pascual",
+        github: "https://github.com/ConcatenateLine",
+        x: "https://x.com/ConcatenateLine",
+        mail: "mailto:concatenateline@gmail.com",
+        image: "/cl=.png",
     },
-    footer: {
-        warning: "Warning: Reading this portfolio may cause sudden urges to refactor code and optimize algorithms",
-        sideEffects: "Side effects may include improved coding practices and an appreciation for clean architecture",
-    }
 };

@@ -1,0 +1,16 @@
+---
+import { t } from "../utils/translateUtils";
+import TranslationScript from "./TranslationScript.astro";
+---
+
+<!-- Fun Footer Notice -->
+<div class="text-center text-xs italic mt-8 mb-4">
+    <p data-translate="footer.warning">
+        {t("footer.warning")}
+    </p>
+    <p class="mt-1" data-translate="footer.sideEffects">
+        {t("footer.sideEffects")}
+    </p>
+</div>
+
+<TranslationScript />

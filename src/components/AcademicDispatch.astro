@@ -1,21 +1,35 @@
 ---
 import { languageStore } from "../store/languageStore";
+import TranslationScript from "./TranslationScript.astro";
+
 const t = (key: string) => languageStore.translate(key);
 ---
 
-<section class="mb-12 highlight-box p-6">
-    <h2 class="font-['Playfair_Display'] text-2xl font-bold mb-4">
-        {t("academic.title")}
-    </h2>
-    <h3 class="text-xl font-bold mb-2">
-        {t("academic.degree")}
-    </h3>
-    <p class="italic mb-4">
-        {t("academic.specialization")}
-    </p>
-    <ul class="space-y-2">
-        {
-            t("academic.achievements")
-        }
-    </ul>
+<section>
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4" data-translate="academic.header">
+            {t("academic.header")}
+        </h2>
+        <p class="text-xl" data-translate="academic.subheader">
+            {t("academic.subheader")}
+        </p>
+    </div>
+
+    <div class="mb-12 highlight-box p-6">
+        <h2
+            class="font-['Playfair_Display'] text-2xl font-bold mb-4"
+            data-translate="academic.title"
+        >
+            {t("academic.title")}
+        </h2>
+        <h3 class="text-xl font-bold mb-2" data-translate="academic.degree">
+            {t("academic.degree")}
+        </h3>
+        <p class="italic mb-4" data-translate="academic.specialization">
+            {t("academic.specialization")}
+        </p>
+    </div>
 </section>
+
+<TranslationScript />

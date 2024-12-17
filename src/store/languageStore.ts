@@ -39,7 +39,7 @@ class LanguageStore {
         }
     }
 
-    public translate(key: string): string | Array<string> {
+    public translate(key: string): string {
         const keys = key.split('.');
         let value: any = translations[this.currentLanguage];
         

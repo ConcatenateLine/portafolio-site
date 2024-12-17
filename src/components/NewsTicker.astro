@@ -1,0 +1,73 @@
+---
+import { languageStore } from '../store/languageStore';
+import TranslationScript from './TranslationScript.astro';
+
+const t = (key: string) => languageStore.translate(key);
+
+// Initialize headlines with fallback values
+let headlines: string[] = [
+    t('news.fallback1'),
+    t('news.fallback2'),
+    t('news.fallback3'),
+    t('news.fallback4')
+];
+
+// Fetch news from NewsAPI
+try {
+    const apiKey = import.meta.env.NEWS_API_KEY;
+    if (!apiKey) {
+        throw new Error('NEWS_API_KEY environment variable is not set');
+    }
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&language=${languageStore.getCurrentLanguage()}&pageSize=5&apiKey=${apiKey}`);
+    const data = await response.json();
+    
+    if (data.status === 'error') {
+        console.error('API Error:', data.message);
+        throw new Error(data.message);
+    }
+
+    // Only update headlines if we got valid articles
+    if (data.articles && data.articles.length > 0) {
+        headlines = data.articles.map((article: any) => article.title);
+    }
+} catch (error) {
+    console.error('Error fetching news:', error);
+    // Keep using fallback headlines
+}
+---
+
+<div class="bg-[#2b2b2b] text-[#f4f1ea] py-2 overflow-hidden">
+    <div class="breaking-news-ticker">
+        <div class="ticker-content">
+            {headlines.map((headline: string, index: number) => (
+                <span class="mr-8 font-['Playfair_Display']">
+                    {headline}
+                </span>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    .breaking-news-ticker {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .ticker-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: ticker 40s linear infinite;
+    }
+
+    @keyframes ticker {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+<TranslationScript />

@@ -1,13 +1,25 @@
 ---
+import { languageStore } from '../store/languageStore';
+import TranslationScript from './TranslationScript.astro';
+
+const t = (key: string) => languageStore.translate(key);
 ---
 
 <div class="vintage-frame m-1 p-8">
     <div class="text-center">
-        <h2 class="font-['Playfair_Display'] text-2xl font-bold mb-4">
-            TECHNICAL FORECAST
+        <h2 class="font-['Playfair_Display'] text-2xl font-bold mb-4" data-translate="forecast.title">
+            {t('forecast.title')}
         </h2>
-        <p class="text-sm mb-2">CLOUD CONDITIONS: Optimal</p>
-        <p class="text-sm mb-2">CODE QUALITY: High</p>
-        <p class="text-sm">DEPLOYMENT OUTLOOK: Clear Skies</p>
+        <p class="text-sm mb-2" data-translate="forecast.cloud">
+            {t('forecast.cloud')}
+        </p>
+        <p class="text-sm mb-2" data-translate="forecast.quality">
+            {t('forecast.quality')}
+        </p>
+        <p class="text-sm" data-translate="forecast.deployment">
+            {t('forecast.deployment')}
+        </p>
     </div>
 </div>
+
+<TranslationScript />

@@ -1,9 +1,11 @@
 ---
-import { languageStore } from '../store/languageStore';
-import LanguageToggle from './LanguageToggle.astro';
+import { t } from "../utils/translateUtils";
+import LanguageToggle from "./LanguageToggle.astro";
+import TranslationScript from "./TranslationScript.astro";
+import NewsTicker from "./NewsTicker.astro";
+import { getCurrentFormattedDate } from "../utils/dateUtils";
 
-const { currentDate } = Astro.props;
-const t = (key: string) => languageStore.translate(key)
+const currentDate = getCurrentFormattedDate();
 ---
 
 <div>
@@ -14,45 +16,94 @@ const t = (key: string) => languageStore.translate(key)
             <div class="newspaper-header">
                 <div class="newspaper-date">
                     <span>Vol. 1, No. 1</span>
-                    <span>{currentDate}</span>
+                    <span class="newspaper-date-current">{currentDate}</span>
                     <span class="flex gap-4 items-center">
                         <slot name="right-top" />
                         <LanguageToggle />
                     </span>
                 </div>
-                <h1 class="font-['Playfair_Display'] text-6xl font-bold mb-2">
-                    {t('header.title')}
+                <h1
+                    class="font-['Playfair_Display'] text-6xl font-bold mb-2"
+                    data-translate="header.title"
+                >
+                    {t("header.title")}
                 </h1>
-                <div class="text-sm uppercase tracking-widest mb-2">
-                    {t('header.subtitle')}
+                <div
+                    class="text-sm uppercase tracking-widest mb-2"
+                    data-translate="header.subtitle"
+                >
+                    {t("header.subtitle")}
                 </div>
-                <div class="flex relative justify-center items-center gap-4 text-sm">
-                    <a href="/"><span class="column-rule">{t('header.departments.bureau')}</span></a>
-                    <a href="/experience"><span class="column-rule">{t('header.departments.cloud')}</span></a>
-                    <a href="/"><span>{t('header.departments.tech')}</span></a>
-                    <div class="newspaper-price">{t('header.price')}</div>
+                <div
+                    class="flex relative justify-center items-center gap-4 text-sm"
+                >
+                   <a
+                       href="/"
+                       class="text-center link-item"
+                       data-translate="header.departments.bureau"
+                   >
+                       {t("header.departments.bureau")}
+                   </a>
+                   <span class="separator"> | </span>
+                   <a
+                       href="/experience"
+                       class="text-center link-item"
+                       data-translate="header.departments.cloud"
+                   >
+                       {t("header.departments.cloud")}
+                   </a>
+                   <span class="separator"> | </span>
+                   <a
+                       href="/"
+                       class="text-center link-item"
+                       data-translate="header.departments.tech"
+                   >
+                       {t("header.departments.tech")}
+                   </a>
+                    <div class="newspaper-price" data-translate="header.price">
+                        {t("header.price")}
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Breaking News Ticker -->
-    <div class="bg-[#2b2b2b] text-[#f4f1ea] py-2 overflow-hidden">
-        <div class="breaking-news-ticker">
-            <div class="ticker-content">
-                <span class="mr-8">
-                    BREAKING: New Cloud Architecture Project Launched
-                </span>
-                <span class="mr-8">
-                    SYSTEM PERFORMANCE IMPROVED BY 300%
-                </span>
-                <span class="mr-8">
-                    AWARDED "ENGINEER OF THE MONTH"
-                </span>
-                <span class="mr-8">
-                    LATEST PROJECT: DISTRIBUTED SYSTEMS AT SCALE
-                </span>
-            </div>
-        </div>
-    </div>
+    <NewsTicker />
 </div>
+
+<TranslationScript />
+
+<style>
+    .link-item {
+        color: var(--text-color); /* A shade of blue that fits well with many themes */
+        text-decoration: none; /* No underline by default */
+        font-weight: bold; /* Make the text bold for emphasis */
+        transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and underline */
+        position: relative; /* Position for pseudo-element */
+    }
+
+    .link-item::after {
+        content: ''; /* Empty content for the pseudo-element */
+        display: block; /* Makes it a block element */
+        height: 2px; /* Thickness of the underline */
+        background: var(--text-color); /* Same color as the text */
+        transition: width 0.3s ease; /* Smooth transition for width */
+        width: 0; /* Start with no width */
+        position: absolute; /* Position it absolutely */
+        left: 0; /* Align to the left */
+        bottom: -5px; /* Position it below the text */
+    }
+
+    .link-item:hover {
+        color: var(--accent); /* Darker shade on hover */
+    }
+
+    .link-item:hover::after {
+        width: 100%; /* Expand the underline on hover */
+    }
+
+    .separator {
+        margin: 0 5px; /* Add some space around the separator */
+    }
+</style>
