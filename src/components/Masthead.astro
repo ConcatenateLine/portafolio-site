@@ -37,29 +37,29 @@ const currentDate = getCurrentFormattedDate();
                 <div
                     class="flex relative justify-center items-center gap-4 text-sm"
                 >
-                   <a
-                       href="/"
-                       class="text-center link-item"
-                       data-translate="header.departments.bureau"
-                   >
-                       {t("header.departments.bureau")}
-                   </a>
-                   <span class="separator"> | </span>
-                   <a
-                       href="/experience"
-                       class="text-center link-item"
-                       data-translate="header.departments.cloud"
-                   >
-                       {t("header.departments.cloud")}
-                   </a>
-                   <span class="separator"> | </span>
-                   <a
-                       href="/"
-                       class="text-center link-item"
-                       data-translate="header.departments.tech"
-                   >
-                       {t("header.departments.tech")}
-                   </a>
+                    <a
+                        href="/portafolio-site/"
+                        class="text-center link-item"
+                        data-translate="header.departments.bureau"
+                    >
+                        {t("header.departments.bureau")}
+                    </a>
+                    <span class="separator"> | </span>
+                    <a
+                        href="/portafolio-site/experience"
+                        class="text-center link-item"
+                        data-translate="header.departments.cloud"
+                    >
+                        {t("header.departments.cloud")}
+                    </a>
+                    <span class="separator"> | </span>
+                    <a
+                        href="/portafolio-site/"
+                        class="text-center link-item"
+                        data-translate="header.departments.tech"
+                    >
+                        {t("header.departments.tech")}
+                    </a>
                     <div class="newspaper-price" data-translate="header.price">
                         {t("header.price")}
                     </div>
@@ -76,15 +76,19 @@ const currentDate = getCurrentFormattedDate();
 
 <style>
     .link-item {
-        color: var(--text-color); /* A shade of blue that fits well with many themes */
+        color: var(
+            --text-color
+        ); /* A shade of blue that fits well with many themes */
         text-decoration: none; /* No underline by default */
         font-weight: bold; /* Make the text bold for emphasis */
-        transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and underline */
+        transition:
+            color 0.3s ease,
+            border-bottom 0.3s ease; /* Smooth transition for color and underline */
         position: relative; /* Position for pseudo-element */
     }
 
     .link-item::after {
-        content: ''; /* Empty content for the pseudo-element */
+        content: ""; /* Empty content for the pseudo-element */
         display: block; /* Makes it a block element */
         height: 2px; /* Thickness of the underline */
         background: var(--text-color); /* Same color as the text */
