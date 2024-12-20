@@ -1,14 +1,18 @@
-name: Deploy to GitHub Pages
+# Sample workflow for building and deploying an Astro site to GitHub Pages
+#
+# To get started with Astro see: https://docs.astro.build/en/getting-started/
+#
+name: Deploy Astro site to Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
+  # Runs on pushes targeting the default branch
   push:
-    branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -22,7 +26,7 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
-# BUILD_PATH: subfolder
+  # BUILD_PATH: subfolder
 
 jobs:
   build:
@@ -51,7 +55,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
       - name: Setup Pages
@@ -70,13 +74,15 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ${{ env.BUILD_PATH }}/dist
+
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
