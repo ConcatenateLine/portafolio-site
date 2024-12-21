@@ -279,7 +279,7 @@ body {
     box-shadow: 
         0 0 0 2px var(--border-color),
         inset 0 0 0 2px var(--border-color);
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .vintage-border-pattern::before {

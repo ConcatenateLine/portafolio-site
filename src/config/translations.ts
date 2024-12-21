@@ -89,7 +89,8 @@ export const translations = {
             imageDescription: "Gathering Planner Screenshot",
             quote: "Creating memorable moments, one gathering at a time.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
-            link: "https://example.com/gathering-planner"
+            link: "https://example.com/gathering-planner",
+            repository: "https://github.com/ConcatenateLine/",
         },
         projects: [
             {
@@ -99,7 +100,8 @@ export const translations = {
                 image: "/portafolio-site/projects/portafolio.png",
                 quote: "Windsurf, the future of programming",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
-                link: "https://concatenateline.github.io/portafolio-site/"
+                link: "https://concatenateline.github.io/portafolio-site/",
+                repository: "https://github.com/ConcatenateLine/portafolio-site"
             },
             {
                 title: "FORGOTTEN PORTFOLIO",
@@ -108,7 +110,8 @@ export const translations = {
                 image: "/portafolio-site/projects/oldportafolio.png",
                 quote: "Testing Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
-                link: "https://concatenateline.github.io/old-portafolio-site/"
+                link: "https://concatenateline.github.io/old-portafolio-site/",
+                repository: "https://github.com/ConcatenateLine/old-portafolio-site"
             }
         ],
         footer: {
@@ -210,7 +213,8 @@ export const translations = {
             imageDescription: "Imagen de muestra del proyecto Gathering Planner",
             quote: "Creando momentos memorables, una reunión a la vez.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
-            link: "https://example.com/gathering-planner"
+            link: "https://example.com/gathering-planner",
+            repository: "https://github.com/ConcatenateLine",
         },
         projects: [
             {
@@ -220,7 +224,8 @@ export const translations = {
                 image: "/portafolio-site/projects/portafolio.png",
                 quote: "Windsurf, el futuro de la programación",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
-                link: "https://concatenateline.github.io/portafolio-site/"
+                link: "https://concatenateline.github.io/portafolio-site/",
+                repository: "https://github.com/ConcatenateLine/portafolio-site"
             },
             {
                 title: "PORTAFOLIO OLVIDADO",
@@ -229,7 +234,8 @@ export const translations = {
                 image: "/portafolio-site/projects/oldportafolio.png",
                 quote: "Probando Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
-                link: "https://concatenateline.github.io/old-portafolio-site/"
+                link: "https://concatenateline.github.io/old-portafolio-site/",
+                repository: "https://github.com/ConcatenateLine/old-portafolio-site"
             }
         ],
         footer: {
