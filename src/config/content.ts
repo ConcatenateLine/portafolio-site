@@ -8,6 +8,6 @@ export const siteContent = {
         github: "https://github.com/ConcatenateLine",
         x: "https://x.com/ConcatenateLine",
         mail: "mailto:concatenateline@gmail.com",
-        image: "/cl=.png",
+        image: "/portafolio-site/cl=.png",
     },
 };

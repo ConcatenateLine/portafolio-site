@@ -85,7 +85,7 @@ export const translations = {
             title: "GATHERING PLANNER",
             subtitle: "Bringing People Together",
             description: "Developing an application designed to facilitate planning and organizing gatherings with family and friends. This project allows users to create events, send invitations, and manage RSVPs effortlessly. Features include customizable event details, reminders, and integration with calendars to ensure everyone stays informed.",
-            image: "/portfolio-site/projects/gatheringplanner.svg",
+            image: "/portafolio-site/projects/gatheringplanner.svg",
             imageDescription: "Gathering Planner Screenshot",
             quote: "Creating memorable moments, one gathering at a time.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
@@ -96,7 +96,7 @@ export const translations = {
                 title: "PORTFOLIO WITH WINDSURF",
                 subtitle: "Creating a portfolio with the help of Windsurf",
                 description: "Utilized the integrated chat system that implemented the decisions made during the development process, documenting the history of interactions with the user.",
-                image: "/portfolio-site/projects/portafolio.png",
+                image: "/portafolio-site/projects/portafolio.png",
                 quote: "Windsurf, the future of programming",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
                 link: "https://concatenateline.github.io/portafolio-site/"
@@ -105,7 +105,7 @@ export const translations = {
                 title: "FORGOTTEN PORTFOLIO",
                 subtitle: "Creating a Portfolio with the help of a template",
                 description: "Created a portfolio with the help of a sample template in Astro and Tailwind.",
-                image: "/portfolio-site/projects/oldportafolio.png",
+                image: "/portafolio-site/projects/oldportafolio.png",
                 quote: "Testing Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
                 link: "https://concatenateline.github.io/old-portafolio-site/"
@@ -206,7 +206,7 @@ export const translations = {
             title: "PLANIFICADOR DE REUNIONES",
             subtitle: "Reuniendo a las Personas",
             description: "Desarrollando una aplicación diseñada para facilitar la planificación y organización de reuniones con familiares y amigos. Este proyecto permite a los usuarios crear eventos, enviar invitaciones y gestionar las confirmaciones de asistencia sin esfuerzo. Las características incluyen detalles de eventos personalizables, recordatorios e integración con calendarios para asegurar que todos estén informados.",
-            image: "/projects/gatheringplanner.svg",
+            image: "/portafolio-site/projects/gatheringplanner.svg",
             imageDescription: "Imagen de muestra del proyecto Gathering Planner",
             quote: "Creando momentos memorables, una reunión a la vez.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
@@ -217,7 +217,7 @@ export const translations = {
                 title: "PORTAFOLIO CON WINDSURF",
                 subtitle: "Creando un portafolio con la ayuda de Windsurf",
                 description: "Utilice el sistema de chat integrado que implemento las deciciones tomadas durante el proceso de desarrollo, documentando el historial de interacciones con el usuario.",
-                image: "/project-analytics.jpg",
+                image: "/portafolio-site/projects/portafolio.png",
                 quote: "Windsurf, el futuro de la programación",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
                 link: "https://concatenateline.github.io/portafolio-site/"
@@ -226,7 +226,7 @@ export const translations = {
                 title: "PORTAFOLIO OLVIDADO",
                 subtitle: "Creando un Portafolio con la ayuda de un template",
                 description: "Cree un portafolio con la ayuda de un template de ejemplo en Astro y Tailwind.",
-                image: "/project-micro.jpg",
+                image: "/portafolio-site/projects/oldportafolio.png",
                 quote: "Probando Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
                 link: "https://concatenateline.github.io/old-portafolio-site/"
