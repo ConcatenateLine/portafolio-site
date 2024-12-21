@@ -85,7 +85,7 @@ export const translations = {
             title: "GATHERING PLANNER",
             subtitle: "Bringing People Together",
             description: "Developing an application designed to facilitate planning and organizing gatherings with family and friends. This project allows users to create events, send invitations, and manage RSVPs effortlessly. Features include customizable event details, reminders, and integration with calendars to ensure everyone stays informed.",
-            image: "/projects/gatheringplanner.svg",
+            image: "/portfolio-site/projects/gatheringplanner.svg",
             imageDescription: "Gathering Planner Screenshot",
             quote: "Creating memorable moments, one gathering at a time.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
@@ -96,7 +96,7 @@ export const translations = {
                 title: "PORTFOLIO WITH WINDSURF",
                 subtitle: "Creating a portfolio with the help of Windsurf",
                 description: "Utilized the integrated chat system that implemented the decisions made during the development process, documenting the history of interactions with the user.",
-                image: "/projects/portafolio.png",
+                image: "/portfolio-site/projects/portafolio.png",
                 quote: "Windsurf, the future of programming",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
                 link: "https://concatenateline.github.io/portafolio-site/"
@@ -105,7 +105,7 @@ export const translations = {
                 title: "FORGOTTEN PORTFOLIO",
                 subtitle: "Creating a Portfolio with the help of a template",
                 description: "Created a portfolio with the help of a sample template in Astro and Tailwind.",
-                image: "/projects/oldportafolio.png",
+                image: "/portfolio-site/projects/oldportafolio.png",
                 quote: "Testing Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
                 link: "https://concatenateline.github.io/old-portafolio-site/"
