@@ -13,11 +13,13 @@ export const translations = {
             },
             nav: {
                 home: "Home",
-                experience: "Experience"
+                experience: "Experience",
+                gazette: "Gazette"
             }
         },
         quotes: {
-            mainQuote: "In the realm of code, elegance is not optional; it's a necessity."
+            mainQuote: "In the realm of code, elegance is not optional; it's a necessity.",
+            tertiaryQuote: "Here's to the data that never lies and the code that always delivers.",
         },
         social: {
             title: "TELEGRAPH OFFICE",
@@ -85,7 +87,7 @@ export const translations = {
             title: "GATHERING PLANNER",
             subtitle: "Bringing People Together",
             description: "Developing an application designed to facilitate planning and organizing gatherings with family and friends. This project allows users to create events, send invitations, and manage RSVPs effortlessly. Features include customizable event details, reminders, and integration with calendars to ensure everyone stays informed.",
-            image: "/portafolio-site/projects/gatheringplanner.svg",
+            image: "projects/gatheringplanner.svg",
             imageDescription: "Gathering Planner Screenshot",
             quote: "Creating memorable moments, one gathering at a time.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
@@ -97,7 +99,7 @@ export const translations = {
                 title: "PORTFOLIO WITH WINDSURF",
                 subtitle: "Creating a portfolio with the help of Windsurf",
                 description: "Utilized the integrated chat system that implemented the decisions made during the development process, documenting the history of interactions with the user.",
-                image: "/portafolio-site/projects/portafolio.png",
+                image: "projects/portafolio.png",
                 quote: "Windsurf, the future of programming",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
                 link: "https://concatenateline.github.io/portafolio-site/",
@@ -107,7 +109,7 @@ export const translations = {
                 title: "FORGOTTEN PORTFOLIO",
                 subtitle: "Creating a Portfolio with the help of a template",
                 description: "Created a portfolio with the help of a sample template in Astro and Tailwind.",
-                image: "/portafolio-site/projects/oldportafolio.png",
+                image: "projects/oldportafolio.png",
                 quote: "Testing Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
                 link: "https://concatenateline.github.io/old-portafolio-site/",
@@ -123,7 +125,38 @@ export const translations = {
         sections: {
             projects: "TECHNICAL PORTFOLIO HIGHLIGHTS",
             technicalGazette: "TECHNICAL GAZETTE",
-        }
+            newsAndUpdates: "NEWS & UPDATES",
+            technicalPublications: "TECHNICAL PUBLICATIONS",
+            technicalPublicationssubtitle: "Stay tuned for the latest updates on projects, tech insights, and more."
+        },
+        newsAndUpdates: [
+            {
+                date: "2023-10-10",
+                title: "New Feature Deployed",
+                description:
+                    "Our latest feature has been deployed to enhance performance and user experience.",
+            },
+            {
+                date: "2023-10-10",
+                title: "New Feature Deployed",
+                description:
+                    "Our latest feature has been deployed to enhance performance and user experience.",
+            }
+        ],
+        publications: [
+            {
+                title: "Understanding React Hooks",
+                description: "A deep dive into the world of React Hooks and how they can simplify your code.",
+                impact: "10,000+ citations",
+                link: "https://example.com/react-hooks"
+            },
+            {
+                title: "Building Scalable Node.js Applications",
+                description: "Best practices for building scalable applications using Node.js.",
+                impact: "Featured Article",
+                link: "https://example.com/nodejs-scalability"
+            }
+        ]
     },
     es: {
         header: {
@@ -137,11 +170,13 @@ export const translations = {
             },
             nav: {
                 home: "Inicio",
-                experience: "Experiencia"
+                experience: "Experiencia",
+                gazette: "Gaceta"
             }
         },
         quotes: {
-            mainQuote: "En el ámbito del código, la elegancia no es opcional; es una necesidad."
+            mainQuote: "En el ámbito del código, la elegancia no es opcional; es una necesidad.",
+            tertiaryQuote: "Brindemos por los datos que nunca mienten y el código que siempre entrega.",
         },
         social: {
             title: "OFICINA DE TELÉGRAFOS",
@@ -209,7 +244,7 @@ export const translations = {
             title: "PLANIFICADOR DE REUNIONES",
             subtitle: "Reuniendo a las Personas",
             description: "Desarrollando una aplicación diseñada para facilitar la planificación y organización de reuniones con familiares y amigos. Este proyecto permite a los usuarios crear eventos, enviar invitaciones y gestionar las confirmaciones de asistencia sin esfuerzo. Las características incluyen detalles de eventos personalizables, recordatorios e integración con calendarios para asegurar que todos estén informados.",
-            image: "/portafolio-site/projects/gatheringplanner.svg",
+            image: "projects/gatheringplanner.svg",
             imageDescription: "Imagen de muestra del proyecto Gathering Planner",
             quote: "Creando momentos memorables, una reunión a la vez.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
@@ -221,7 +256,7 @@ export const translations = {
                 title: "PORTAFOLIO CON WINDSURF",
                 subtitle: "Creando un portafolio con la ayuda de Windsurf",
                 description: "Utilice el sistema de chat integrado que implemento las deciciones tomadas durante el proceso de desarrollo, documentando el historial de interacciones con el usuario.",
-                image: "/portafolio-site/projects/portafolio.png",
+                image: "projects/portafolio.png",
                 quote: "Windsurf, el futuro de la programación",
                 technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
                 link: "https://concatenateline.github.io/portafolio-site/",
@@ -231,7 +266,7 @@ export const translations = {
                 title: "PORTAFOLIO OLVIDADO",
                 subtitle: "Creando un Portafolio con la ayuda de un template",
                 description: "Cree un portafolio con la ayuda de un template de ejemplo en Astro y Tailwind.",
-                image: "/portafolio-site/projects/oldportafolio.png",
+                image: "projects/oldportafolio.png",
                 quote: "Probando Astro",
                 technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
                 link: "https://concatenateline.github.io/old-portafolio-site/",
@@ -247,6 +282,38 @@ export const translations = {
         sections: {
             projects: "DESTACADOS DEL PORTAFOLIO TÉCNICO",
             technicalGazette: "GACETA TÉCNICA",
-        }
+            technicalPublications: "PUBLICACIONES TÉCNICAS",
+            newsAndUpdates: "NOTICIAS Y ACTUALIZACIONES",
+            technicalPublicationssubtitle: "Mantente al tanto de las últimas actualizaciones sobre proyectos, ideas tecnológicas y más."
+        },
+        newsAndUpdates: [
+            {
+                date: "2023-10-10",
+                title: "Nueva Función Desplegada",
+                description:
+                    "Nuestra última función ha sido desplegada para mejorar el rendimiento y la experiencia del usuario.",
+            },
+            {
+                date: "2023-10-10",
+                title: "Nueva Función Desplegada",
+                description:
+                    "Nuestra última función ha sido desplegada para mejorar el rendimiento y la experiencia del usuario.",
+            }
+        ],
+        publications: [
+            {
+                title: "Entendiendo los Hooks de React",
+                description: "Una inmersión profunda en el mundo de los Hooks de React y cómo pueden simplificar tu código.",
+                impact: "10,000+ citas",
+                link: "https://example.com/react-hooks"
+            },
+            {
+                title: "Construyendo Aplicaciones Escalables con Node.js",
+                description: "Mejores prácticas para construir aplicaciones escalables utilizando Node.js.",
+                impact: "Artículo Destacado",
+                link: "https://example.com/nodejs-scalability"
+            }
+        ]
+
     }
 };

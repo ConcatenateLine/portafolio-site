@@ -1,0 +1,56 @@
+---
+import { t } from "../utils/translateUtils";
+import TranslationScript from "./TranslationScript.astro";
+---
+
+<section class="container py-8">
+    <h2
+        class="font-['Playfair_Display'] text-4xl font-bold mb-4"
+        data-translate="sections.newsAndUpdates"
+    >
+        News & Updates
+    </h2>
+    <p
+        class="mb-8 text-xl"
+        data-translate="sections.technicalPublicationssubtitle"
+    >
+        Stay tuned for the latest updates on projects, tech insights, and more.
+    </p>
+    <div class="relative border-l-2 border-[var(--vintage-accent)] ml-4">
+        {
+            Array.from({ length: 2 }).map((_, index) => (
+                <div class="mb-8 ml-6">
+                    <div class="absolute w-4 h-4 bg-[var(--bg-color)] -left-2 ring-2 ring-[var(--vintage-accent)]" />
+                    <time
+                        class="mb-1 text-sm font-normal"
+                        datetime={t(`newsAndUpdates.${index}.dateISO`)}
+                    >
+                        {t(`newsAndUpdates.${index}.date`)}
+                    </time>
+                    <h3
+                        class="text-lg font-semibold"
+                        data-translate={`newsAndUpdates.${index}.title`}
+                    >
+                        {t(`newsAndUpdates.${index}.title`)}
+                    </h3>
+                    <p
+                        class="text-base"
+                        data-translate={`newsAndUpdates.${index}.description`}
+                    >
+                        {t(`newsAndUpdates.${index}.description`)}
+                    </p>
+                </div>
+            ))
+        }
+
+        <!-- Timeline Item start -->
+        <div class="mb-8 ml-6 h-2">
+            <div
+                class="absolute w-4 h-2 bg-[var(--bg-color)] -left-2 ring-2 ring-[var(--vintage-accent)]"
+            >
+            </div>
+        </div>
+    </div>
+</section>
+
+<TranslationScript />

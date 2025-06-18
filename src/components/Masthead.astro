@@ -5,6 +5,7 @@ import TranslationScript from "./TranslationScript.astro";
 import NewsTicker from "./NewsTicker.astro";
 import { getCurrentFormattedDate } from "../utils/dateUtils";
 
+const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
 const currentDate = getCurrentFormattedDate();
 ---
 
@@ -13,7 +14,7 @@ const currentDate = getCurrentFormattedDate();
     <header class="vintage-secondary-bg border-b-4 vintage-border relative">
         <div class="absolute left-0 bottom-0">
             <img 
-                src="/portafolio-site/cl=bannerperson.png" 
+                src={`${environment_url}cl=bannerperson.png`} 
                 alt="Vintage newspaper mascot"
                 class="w-64 h-auto opacity-30 mix-blend-multiply"
             />
@@ -45,7 +46,7 @@ const currentDate = getCurrentFormattedDate();
                     class="flex relative justify-center items-center gap-4 text-sm"
                 >
                     <a
-                        href="/portafolio-site/"
+                        href=`${environment_url}`
                         class="text-center link-item"
                         data-translate="header.departments.bureau"
                     >
@@ -53,7 +54,7 @@ const currentDate = getCurrentFormattedDate();
                     </a>
                     <span class="separator"> | </span>
                     <a
-                        href="/portafolio-site/experience"
+                        href=`${environment_url}experience`
                         class="text-center link-item"
                         data-translate="header.departments.cloud"
                     >
@@ -61,7 +62,7 @@ const currentDate = getCurrentFormattedDate();
                     </a>
                     <span class="separator"> | </span>
                     <a
-                        href="/portafolio-site/"
+                        href=`${environment_url}gazette`
                         class="text-center link-item"
                         data-translate="header.departments.tech"
                     >

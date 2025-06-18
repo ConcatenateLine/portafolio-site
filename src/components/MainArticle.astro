@@ -2,6 +2,8 @@
 import { t } from "../utils/translateUtils";
 import GitHubIcon from "./GitHubIcon.astro";
 import TranslationScript from "./TranslationScript.astro";
+
+const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
 ---
 
 <article class="border-b-2 vintage-border pb-8 mb-8">
@@ -19,7 +21,7 @@ import TranslationScript from "./TranslationScript.astro";
   </h3>
   <div class="mb-6">
     <img
-      src={t("mainProject.image")}
+      src={environment_url + t("mainProject.image")}
       alt={t("mainProject.title")}
       class="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-300"
     />

@@ -1,31 +1,41 @@
 ---
-const publications = [
-    {
-        title: "Distributed Systems Design Patterns",
-        publication: "Tech Architecture Quarterly",
-        impact: "10,000+ citations",
-    },
-    {
-        title: "Cloud-Native Architecture Best Practices",
-        publication: "System Design Weekly",
-        impact: "Featured Article",
-    },
-];
+import { t } from "../utils/translateUtils";
+import TranslationScript from "./TranslationScript.astro";
 ---
 
 <div class="border-t-2 vintage-border pt-6 mb-8">
-    <h2 class="font-['Playfair_Display'] text-xl font-bold mb-4">
-        TECHNICAL PUBLICATIONS
+    <h2
+        class="font-['Playfair_Display'] text-4xl font-bold mb-4"
+        data-translate="sections.technicalPublications"
+    >
+        Technical Publications
     </h2>
     {
-        publications.map((pub) => (
+        Array.from({ length: 2 }).map((_, index) => (
             <article class="mb-6">
-                <h3 class="font-bold mb-2">{pub.title}</h3>
+                <h3
+                    class="font-bold mb-2"
+                    data-translate={`publications.${index}.title`}
+                >
+                    {t(`publications.${index}.title`)}
+                </h3>
                 <div class="text-sm">
-                    <p class="italic">{pub.publication}</p>
-                    <p class="text-gray-600">{pub.impact}</p>
+                    <p
+                        class="italic"
+                        data-translate={`publications.${index}.description`}
+                    >
+                        {t(`publications.${index}.description`)}
+                    </p>
+                    <p
+                        class="text-gray-600"
+                        data-translate={`publications.${index}.impact`}
+                    >
+                        {t(`publications.${index}.impact`)}
+                    </p>
                 </div>
             </article>
         ))
     }
 </div>
+
+<TranslationScript />
