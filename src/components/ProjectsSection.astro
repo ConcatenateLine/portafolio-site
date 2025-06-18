@@ -16,9 +16,9 @@ const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     {
-      Array.from({ length: 2 }).map((_, index) => (
+      Array.from({ length: 6 }).map((_, index) => (
         <article class="vintage-border-pattern p-6 flex flex-col">
-          <div class="flex-grow">
+          <div class="flex-grow p-2">
             <div class="mb-4">
               <a href={t(`projects.${index}.link`)} target="_blank">
                 <img
@@ -61,7 +61,7 @@ const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
             }
           </div>
 
-          <div class="flex items-center space-x-4 mt-auto">
+          <div class="flex items-center space-x-4 mt-auto p-2">
             <a
               href={t(`projects.${index}.repository`)}
               target="_blank"
