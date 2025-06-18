@@ -130,11 +130,11 @@ export const translations = {
         title: "Objetivify",
         subtitle: "Web App for shared calendar goals",
         description:
-          "Objetivify is a web application designed to help users set and track their goals with shared calendars. The application is built using Django. The database is managed by PostgreSQL. The application is deployed on Render (deprecated).",
+          "Objetivify is a web application designed to help users set and track their goals with shared calendars. The application is built using Django. The database is managed by PostgreSQL. The application is deployed on Render (free instance will spin down with inactivity).",
         image: "/projects/objetivify.png",
         quote: "Web App",
         technologies: ["Django", "Python", "PostgreSQL", "Render"],
-        link: "https://github.com/ConcatenateLine/AboutPython",
+        link: "https://aboutpython.onrender.com/",
         repository: "https://github.com/ConcatenateLine/AboutPython",
       },
       {
@@ -350,11 +350,11 @@ export const translations = {
         title: "Objetivify",
         subtitle: "Aplicacion web para compartir metas",
         description:
-          "Objetivify es una aplicacion web que permite a los usuarios compartir metas mediante calendarios. La aplicacion se construye utilizando Django. La base de datos se gestiona por PostgreSQL. La aplicacion se despliega en Render (deprecated).",
+          "Objetivify es una aplicacion web que permite a los usuarios compartir metas mediante calendarios. La aplicacion se construye utilizando Django. La base de datos se gestiona por PostgreSQL. La aplicacion se despliega en Render ( Instancia gratuita que se apaga con inactividad).",
         image: "/projects/objetivify.png",
         quote: "Aplicacion web",
         technologies: ["Django", "Python", "PostgreSQL", "Render"],
-        link: "https://github.com/ConcatenateLine/AboutPython",
+        link: "https://aboutpython.onrender.com/",
         repository: "https://github.com/ConcatenateLine/AboutPython",
       },
       {
