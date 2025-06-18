@@ -4,38 +4,45 @@ import TranslationScript from "./TranslationScript.astro";
 ---
 
 <div class="border-t-2 vintage-border pt-6 mb-8">
-    <h2
-        class="font-['Playfair_Display'] text-4xl font-bold mb-4"
-        data-translate="sections.technicalPublications"
-    >
-        Technical Publications
-    </h2>
-    {
-        Array.from({ length: 2 }).map((_, index) => (
-            <article class="mb-6">
-                <h3
-                    class="font-bold mb-2"
-                    data-translate={`publications.${index}.title`}
-                >
-                    {t(`publications.${index}.title`)}
-                </h3>
-                <div class="text-sm">
-                    <p
-                        class="italic"
-                        data-translate={`publications.${index}.description`}
-                    >
-                        {t(`publications.${index}.description`)}
-                    </p>
-                    <p
-                        class="text-gray-600"
-                        data-translate={`publications.${index}.impact`}
-                    >
-                        {t(`publications.${index}.impact`)}
-                    </p>
-                </div>
-            </article>
-        ))
-    }
+  <h2
+    class="font-['Playfair_Display'] text-4xl font-bold mb-4"
+    data-translate="sections.technicalPublications"
+  >
+    Publications
+  </h2>
+  {
+    Array.from({ length: 2 }).map((_, index) => (
+      <article class="mb-6">
+        <h3
+          class="font-bold mb-2"
+          data-translate={`publications.${index}.title`}
+        >
+          {t(`publications.${index}.title`)}
+        </h3>
+        <a
+          href={t(`publications.${index}.link`)}
+          target="_blank"
+          data-translate={`publications.${index}.link`}
+        >
+          {t(`publications.${index}.link`)}
+        </a>
+        <div class="text-sm">
+          <p
+            class="italic"
+            data-translate={`publications.${index}.description`}
+          >
+            {t(`publications.${index}.description`)}
+          </p>
+          <p
+            class="text-gray-600"
+            data-translate={`publications.${index}.impact`}
+          >
+            {t(`publications.${index}.impact`)}
+          </p>
+        </div>
+      </article>
+    ))
+  }
 </div>
 
 <TranslationScript />

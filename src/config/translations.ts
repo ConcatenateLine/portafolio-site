@@ -185,38 +185,24 @@ export const translations = {
       projects: "TECHNICAL PORTFOLIO HIGHLIGHTS",
       technicalGazette: "TECHNICAL GAZETTE",
       newsAndUpdates: "NEWS & UPDATES",
-      technicalPublications: "TECHNICAL PUBLICATIONS",
+      technicalPublications: "PUBLICATIONS",
       technicalPublicationssubtitle:
         "Stay tuned for the latest updates on projects, tech insights, and more.",
     },
-    newsAndUpdates: [
-      {
-        date: "2023-10-10",
-        title: "New Feature Deployed",
-        description:
-          "Our latest feature has been deployed to enhance performance and user experience.",
-      },
-      {
-        date: "2023-10-10",
-        title: "New Feature Deployed",
-        description:
-          "Our latest feature has been deployed to enhance performance and user experience.",
-      },
-    ],
     publications: [
       {
-        title: "Understanding React Hooks",
+        title: "docker-laravel-maridb-vite-react-ts",
         description:
-          "A deep dive into the world of React Hooks and how they can simplify your code.",
-        impact: "10,000+ citations",
-        link: "https://example.com/react-hooks",
+          "Set up Dockerized Laravel backend with MariaDB and Vite-powered React TS frontend",
+        impact: "template",
+        link: "https://github.com/ConcatenateLine/docker-laravel-maridb-vite-react-ts",
       },
       {
-        title: "Building Scalable Node.js Applications",
+        title: "Full Stack Open",
         description:
-          "Best practices for building scalable applications using Node.js.",
-        impact: "Featured Article",
-        link: "https://example.com/nodejs-scalability",
+          "This course serves as an introduction to modern web application development with JavaScript. The main focus is on building single page applications with ReactJS that use REST APIs built with Node.js.",
+        impact: "route",
+        link: "https://fullstackopen.com/en/",
       },
     ],
   },
@@ -407,39 +393,25 @@ export const translations = {
     sections: {
       projects: "DESTACADOS DEL PORTAFOLIO TÉCNICO",
       technicalGazette: "GACETA TÉCNICA",
-      technicalPublications: "PUBLICACIONES TÉCNICAS",
+      technicalPublications: "PUBLICACIONES",
       newsAndUpdates: "NOTICIAS Y ACTUALIZACIONES",
       technicalPublicationssubtitle:
         "Mantente al tanto de las últimas actualizaciones sobre proyectos, ideas tecnológicas y más.",
     },
-    newsAndUpdates: [
-      {
-        date: "2023-10-10",
-        title: "Nueva Función Desplegada",
-        description:
-          "Nuestra última función ha sido desplegada para mejorar el rendimiento y la experiencia del usuario.",
-      },
-      {
-        date: "2023-10-10",
-        title: "Nueva Función Desplegada",
-        description:
-          "Nuestra última función ha sido desplegada para mejorar el rendimiento y la experiencia del usuario.",
-      },
-    ],
     publications: [
       {
-        title: "Entendiendo los Hooks de React",
+        title: "docker-laravel-maridb-vite-react-ts",
         description:
-          "Una inmersión profunda en el mundo de los Hooks de React y cómo pueden simplificar tu código.",
-        impact: "10,000+ citas",
-        link: "https://example.com/react-hooks",
+          "Template para crear aplicaciones web con Laravel, MariaDB, Vite y React.",
+        impact: "template",
+        link: "https://github.com/ConcatenateLine/docker-laravel-maridb-vite-react-ts",
       },
       {
-        title: "Construyendo Aplicaciones Escalables con Node.js",
+        title: "Full Stack Open",
         description:
-          "Mejores prácticas para construir aplicaciones escalables utilizando Node.js.",
-        impact: "Artículo Destacado",
-        link: "https://example.com/nodejs-scalability",
+          "Este curso sirve como una introducción al desarrollo de aplicaciones web modernas con JavaScript. El enfoque principal es la construcción de aplicaciones de una sola página con ReactJS que utilizan APIs REST construidas con Node.js.",
+        impact: "route",
+        link: "https://fullstackopen.com/es/",
       },
     ],
   },
