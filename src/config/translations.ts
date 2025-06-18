@@ -353,7 +353,7 @@ export const translations = {
           "Objetivify es una aplicacion web que permite a los usuarios compartir metas mediante calendarios. La aplicacion se construye utilizando Django. La base de datos se gestiona por PostgreSQL. La aplicacion se despliega en Render ( Instancia gratuita que se apaga con inactividad).",
         image: "/projects/objetivify.png",
         quote: "Aplicacion web",
-        technologies: ["Django", "Python", "PostgreSQL", "Render"],
+        technologies: ["Django", "AWS", "PostgreSQL", "Render"],
         link: "https://aboutpython.onrender.com/",
         repository: "https://github.com/ConcatenateLine/AboutPython",
       },
