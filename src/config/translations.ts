@@ -127,6 +127,17 @@ export const translations = {
         repository: "https://github.com/ConcatenateLine/Printl",
       },
       {
+        title: "Objetivify",
+        subtitle: "Web App for shared calendar goals",
+        description:
+          "Objetivify is a web application designed to help users set and track their goals with shared calendars. The application is built using Django. The database is managed by PostgreSQL. The application is deployed on Render (deprecated).",
+        image: "/projects/objetivify.png",
+        quote: "Web App",
+        technologies: ["Django", "Python", "PostgreSQL", "Render"],
+        link: "https://github.com/ConcatenateLine/AboutPython",
+        repository: "https://github.com/ConcatenateLine/AboutPython",
+      },
+      {
         title: "Incorrect Password Storage",
         subtitle: "Mobile App",
         description:
@@ -334,6 +345,17 @@ export const translations = {
         technologies: ["Flet", "FastAPI", "SQLite", "Python"],
         link: "https://github.com/ConcatenateLine/Printl",
         repository: "https://github.com/ConcatenateLine/Printl",
+      },
+      {
+        title: "Objetivify",
+        subtitle: "Aplicacion web para compartir metas",
+        description:
+          "Objetivify es una aplicacion web que permite a los usuarios compartir metas mediante calendarios. La aplicacion se construye utilizando Django. La base de datos se gestiona por PostgreSQL. La aplicacion se despliega en Render (deprecated).",
+        image: "/projects/objetivify.png",
+        quote: "Aplicacion web",
+        technologies: ["Django", "Python", "PostgreSQL", "Render"],
+        link: "https://github.com/ConcatenateLine/AboutPython",
+        repository: "https://github.com/ConcatenateLine/AboutPython",
       },
       {
         title: "Incorrect Password Storage",
