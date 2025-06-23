@@ -6,4 +6,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site:  "https://concatenateline.github.io/portafolio-site/",
+  trailingSlash: 'always',
 });
