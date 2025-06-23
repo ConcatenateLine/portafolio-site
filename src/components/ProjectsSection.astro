@@ -20,7 +20,7 @@ const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
         <article class="vintage-border-pattern p-6 flex flex-col">
           <div class="flex-grow p-2">
             <div class="mb-4">
-              <a href={t(`projects.${index}.link`)} target="_blank">
+              <a href={`/projects/${t(`projects.${index}.slug`)}`}>
                 <img
                   src={environment_url + t(`projects.${index}.image`)}
                   alt={t(`projects.${index}.title`)}
@@ -31,9 +31,9 @@ const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
             </div>
             <h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">
               <a
-                href={t(`projects.${index}.link`)}
-                target="_blank"
+                href={`/projects/${t(`projects.${index}.slug`)}`}
                 data-translate={`projects.${index}.title`}
+                class="hover:underline"
               >
                 {t(`projects.${index}.title`)}
               </a>

@@ -1,0 +1,241 @@
+---
+import { t } from "../../utils/translateUtils";
+import Layout from "../../layouts/Layout.astro";
+import { getAllProjects } from "../../utils/projectUtils";
+import Footer from "../../components/Footer.astro";
+
+const environment_url = import.meta.env.BASE_URL || "/portafolio-site/";
+
+// This function tells Astro which paths to generate at build time
+export async function getStaticPaths() {
+  const projects = getAllProjects();
+
+  return projects.map((project) => ({
+    params: {
+      slug: project.slug,
+    },
+    props: {
+      project,
+    },
+  }));
+}
+
+// Get the project from props passed by getStaticPaths
+const { project } = Astro.props;
+
+// If project not found, return 404 (this is a fallback, should be handled by getStaticPaths)
+if (!project) {
+  return Astro.redirect("/404");
+}
+
+// Set the page title
+const pageTitle = `The Project | ${t(`projects.${project.id}.title`)}`;
+---
+
+<Layout title={pageTitle}>
+  <div
+    class="absolute inset-0 vintage-paper-texture opacity-30 pointer-events-none"
+  >
+  </div>
+  <!-- Vintage Separator with Ornaments -->
+  <div class="flex items-center justify-center my-8">
+    <div class="vintage-ornament"></div>
+    <div class="vintage-separator mx-4 flex-grow"></div>
+    <div class="vintage-ornament"></div>
+  </div>
+
+  <article class="max-w-4xl mx-auto p-6 mb-6 vintage-border-pattern">
+    <header class="mb-8 border-b-2 vintage-border pb-6">
+      <div class="mb-6">
+        <img
+          src={environment_url + t(`projects.${project.id}.image`)}
+          alt={t(`projects.${project.id}.title`)}
+          class="w-full h-96 object-cover rounded-lg shadow-lg grayscale hover:grayscale-0 transition-all duration-300"
+        />
+      </div>
+      <h1
+        class="text-4xl font-bold mb-2 vintage-text font-['Playfair_Display']"
+        data-translate={`projects.${project.id}.title`}
+      >
+        {project.title}
+      </h1>
+      <h2
+        class="text-2xl text-gray-600 mb-4 font-serif italic"
+        data-translate={`projects.${project.id}.subtitle`}
+      >
+        {project.subtitle}
+      </h2>
+    </header>
+
+    <div class="prose max-w-none mb-8">
+      <p
+        class="text-lg leading-relaxed mb-6"
+        data-translate={`projects.${project.id}.description`}
+      >
+        {project.description}
+      </p>
+
+      {
+        project.technologies && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.technologies?.map((technology: any, id: number) => (
+              <span
+                class="vintage-badge"
+                data-translate={`projects.${project.id}.technologies.${id}`}
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
+        )
+      }
+
+      {
+        project.screenshots && project.screenshots.length > 0 && (
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 vintage-text font-['Playfair_Display']">
+              Screenshots
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {project.screenshots.map((url: string, idx: number) => (
+                <img
+                  src={environment_url + url}
+                  alt={`Screenshot ${idx + 1} of ${project.title}`}
+                  class="w-full h-48 object-cover rounded vintage-border cursor-pointer transition-transform hover:scale-105 screenshot-img"
+                  loading="lazy"
+                  data-url={environment_url + url}
+                  data-alt={`Screenshot ${idx + 1} of ${project.title}`}
+                />
+              ))}
+            </div>
+            <div
+              id="lightbox-modal"
+              class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden"
+            >
+              <img
+                id="lightbox-img"
+                src=""
+                alt="Screenshot"
+                class="max-h-[80vh] max-w-[90vw] rounded shadow-lg border-4 border-white"
+              />
+              <button
+                id="lightbox-close"
+                class="absolute top-4 right-8 text-white text-3xl font-bold bg-black bg-opacity-50 rounded px-3 py-1 hover:bg-opacity-80"
+                aria-label="Close"
+              >
+                &times;
+              </button>
+            </div>
+          </section>
+        )
+      }
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-gray-200">
+      <div class="flex flex-wrap gap-4">
+        {
+          project.repository && (
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="vintage-botton inline-flex items-center space-x-4 mt-auto p-2"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.07-.608.07-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.836c.85.004 1.705.115 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                />
+              </svg>
+              <span data-translate="buttons.gitHub">View on GitHub</span>
+            </a>
+          )
+        }
+        {
+          project.link && project.link !== project.repository && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="vintage-botton inline-flex items-center px-4 py-2 space-x-4"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              <span data-translate="buttons.live">Live Demo</span>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </article>
+
+  <Footer pageNumber={1.1} />
+</Layout>
+
+<script>
+  function openLightbox(url: string, alt: string) {
+    const modal = document.getElementById("lightbox-modal");
+    const img = document.getElementById("lightbox-img");
+    if (modal && img) {
+      (img as HTMLImageElement).src = url;
+      (img as HTMLImageElement).alt = alt;
+      modal.classList.remove("hidden");
+      document.onkeydown = (e) => {
+        if (e.key === "Escape") closeLightbox();
+      };
+    }
+  }
+  function closeLightbox() {
+    const modal = document.getElementById("lightbox-modal");
+    if (modal) {
+      modal.classList.add("hidden");
+      document.onkeydown = null;
+    }
+  }
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", () => {
+      // Attach click listeners to all screenshot images
+      document.querySelectorAll(".screenshot-img").forEach((img) => {
+        img.addEventListener("click", function (this: HTMLElement) {
+          openLightbox(this.dataset.url as string, this.dataset.alt as string);
+        });
+      });
+      const closeBtn = document.getElementById("lightbox-close");
+      const modal = document.getElementById("lightbox-modal");
+      if (closeBtn) closeBtn.onclick = closeLightbox;
+      if (modal) {
+        modal.onclick = (e) => {
+          const target = e.target;
+          if (
+            target &&
+            target instanceof HTMLElement &&
+            target.id === "lightbox-modal"
+          )
+            closeLightbox();
+        };
+      }
+    });
+  }
+</script>
+
+<style>
+  .prose {
+    line-height: 1.75;
+  }
+  .prose p {
+    margin-bottom: 1.25em;
+  }
+</style>

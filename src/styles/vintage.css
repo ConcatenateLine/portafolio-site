@@ -533,3 +533,11 @@ body::before {
     transform: rotate(-2deg);
     margin: 0 0.5rem;
 }
+
+.vintage-botton {
+    background: var(--bg-accent);
+}
+
+.vintage-botton:hover {
+    background-color: var(--bg-color);
+}

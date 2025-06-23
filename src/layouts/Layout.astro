@@ -1,0 +1,42 @@
+---
+import "../styles/vintage.css";
+import TranslationScript from "../components/TranslationScript.astro";
+
+import ThemeToggle from "../components/ThemeToggle.astro";
+import Masthead from "../components/Masthead.astro";
+
+import { siteContent } from "../config/content";
+import FooterNotice from "../components/FooterNotice.astro";
+import { t } from "../utils/translateUtils";
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/cl=.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title data-translate={title ? title : "header.title"}>
+      {siteContent.meta.title + " - " + t("header.title")}
+    </title>
+  </head>
+
+  <body class="vintage-bg">
+    <div class="vintage-corner-topleft"></div>
+
+    <Masthead>
+      <ThemeToggle slot="right-top" />
+    </Masthead>
+
+    <main class="max-w-7xl mx-auto vintage-secondary-bg p-8 relative">
+      <slot />
+    </main>
+
+    <FooterNotice />
+    <div class="vintage-corner-bottomright"></div>
+
+    <TranslationScript />
+  </body>
+</html>

@@ -1,42 +1,13 @@
 ---
-import "../styles/vintage.css";
-import Masthead from "../components/Masthead.astro";
 import Footer from "../components/Footer.astro";
-import ThemeToggle from "../components/ThemeToggle.astro";
-import { siteContent } from "../config/content";
-import FooterNotice from "../components/FooterNotice.astro";
 import TechnicalPublications from "../components/TechnicalPublications.astro";
-import NewsAndUpdates from "../components/NewsAndUpdates.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>{siteContent.meta.title} - Experience</title>
-  </head>
-  <body class="vintage-bg">
-    <div class="vintage-corner-topright"></div>
+<Layout title="header.departmentsTitles.tech">
+  <section>
+    <TechnicalPublications />
 
-    <Masthead>
-      <ThemeToggle slot="right-top" />
-    </Masthead>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto vintage-secondary-bg p-8">
-      
-      <TechnicalPublications />
-
-      <Footer pageNumber={3} />
-
-      <FooterNotice />
-    </main>
-    <div class="vintage-corner-bottomleft"></div>
-  </body>
-</html>
+    <Footer pageNumber={3} />
+  </section>
+</Layout>

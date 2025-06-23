@@ -1,80 +1,50 @@
 ---
-import "../styles/vintage.css";
-import Masthead from "../components/Masthead.astro";
 import Footer from "../components/Footer.astro";
 import MainArticle from "../components/MainArticle.astro";
 import TechnicalGazette from "../components/TechnicalGazette.astro";
-// import TechnicalPublications from "../components/TechnicalPublications.astro";
-// import ProfessionalMilestones from "../components/ProfessionalMilestones.astro";
-import ThemeToggle from "../components/ThemeToggle.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
 import SocialContact from "../components/SocialContact.astro";
 import { siteContent } from "../config/content";
-import FooterNotice from "../components/FooterNotice.astro";
 import QuoteOfTheDay from "../components/QuoteOfTheDay.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/portafolio-site/cl=favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<title>{siteContent.meta.title}</title>
-	</head>
-	<body class="vintage-bg">
-		<div class="vintage-corner-topleft"></div>
-		<Masthead>
-			<ThemeToggle slot="right-top" />
-		</Masthead>
+<Layout>
+  <section>
+    <!-- Vintage Paper Texture Overlay -->
+    <div
+      class="absolute inset-0 vintage-paper-texture opacity-30 pointer-events-none"
+    >
+    </div>
 
-		<!-- Main Content -->
-		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8 relative">
-			<!-- Vintage Paper Texture Overlay -->
-			<div
-				class="absolute inset-0 vintage-paper-texture opacity-30 pointer-events-none"
-			>
-			</div>
+    <QuoteOfTheDay />
 
-			<QuoteOfTheDay />
+    <!-- Vintage Separator with Ornaments -->
+    <div class="flex items-center justify-center my-8">
+      <div class="vintage-ornament"></div>
+      <div class="vintage-separator mx-4 flex-grow"></div>
+      <div class="vintage-ornament"></div>
+    </div>
 
-			<!-- Vintage Separator with Ornaments -->
-			<div class="flex items-center justify-center my-8">
-				<div class="vintage-ornament"></div>
-				<div class="vintage-separator mx-4 flex-grow"></div>
-				<div class="vintage-ornament"></div>
-			</div>
+    <!-- Grid Layout with Vintage Frames -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <!-- Main Column -->
+      <div class="md:col-span-8">
+        <div>
+          <MainArticle />
+          <ProjectsSection />
+          <TechnicalGazette />
+        </div>
+      </div>
 
-			<!-- Grid Layout with Vintage Frames -->
-			<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-				<!-- Main Column -->
-				<div class="md:col-span-8">
-					<div>
-						<MainArticle />
-						<ProjectsSection />
-						<TechnicalGazette />
-					</div>
-				</div>
+      <!-- Side Column with Vintage Border -->
+      <div class="md:col-span-4">
+        <div class="vintage-sidebar">
+          <SocialContact socials={siteContent.socials} />
+        </div>
+      </div>
+    </div>
 
-				<!-- Side Column with Vintage Border -->
-				<div class="md:col-span-4">
-					<div class="vintage-sidebar">
-						<!-- <ProfessionalMilestones /> -->
-						<!-- <TechnicalPublications /> -->
-						<SocialContact socials={siteContent.socials} />
-					</div>
-				</div>
-			</div>
-
-			<Footer pageNumber={1} />
-
-			<!-- Other content -->
-			<FooterNotice />
-		</main>
-		<div class="vintage-corner-bottomright"></div>
-	</body>
-</html>
+    <Footer pageNumber={1} />
+  </section>
+</Layout>

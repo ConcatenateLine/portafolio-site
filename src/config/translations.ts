@@ -11,6 +11,12 @@ export const translations = {
         cloud: "Career Gazette",
         tech: "The Tech Telegraph & Life Bytes",
       },
+      departmentsTitles: {
+        bureau:
+          "THE DEVELOPER CHRONICLE - The Innovation Times & Project Press",
+        cloud: "THE DEVELOPER CHRONICLE - Career Gazette",
+        tech: "THE DEVELOPER CHRONICLE - The Tech Telegraph & Life Bytes",
+      },
       nav: {
         home: "Home",
         experience: "Experience",
@@ -114,6 +120,15 @@ export const translations = {
         technologies: ["React", "Laravel", "MariaDB", "Docker Compose"],
         link: "https://github.com/ConcatenateLine/",
         repository: "https://github.com/ConcatenateLine/",
+        slug: "transporttl",
+        screenshots: [
+          "/screenshots/transport/customdashboard.png",
+          "/screenshots/transport/customerdashboard.png",
+          "/screenshots/transport/driverdashboard.png",
+          "/screenshots/transport/routeoptimizate.png",
+          "/screenshots/transport/routeoptimizated.png",
+          "/screenshots/transport/transporttl.png",
+        ],
       },
       {
         title: "PrintTL",
@@ -125,6 +140,13 @@ export const translations = {
         technologies: ["Flet", "FastAPI", "SQLite", "Python"],
         link: "https://github.com/ConcatenateLine/Printl",
         repository: "https://github.com/ConcatenateLine/Printl",
+        slug: "printtl",
+        screenshots: [
+          "/screenshots/printl/printldomainspermissions.png",
+          "/screenshots/printl/printlprinters.png",
+          "/screenshots/printl/printlservicemanager.png",
+          "/screenshots/printl/printtlhome.png",
+        ],
       },
       {
         title: "Objetivify",
@@ -136,6 +158,18 @@ export const translations = {
         technologies: ["Django", "AWS", "PostgreSQL", "Render"],
         link: "https://aboutpython.onrender.com/",
         repository: "https://github.com/ConcatenateLine/AboutPython",
+        slug: "objetivify",
+        screenshots: [
+          "/screenshots/sharedcalendar/objetivifycalendarview.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewalter.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewmodal.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewobjective.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewobjectivealter.png",
+          "/screenshots/sharedcalendar/objetivifycreatecalendarview.png",
+          "/screenshots/sharedcalendar/objetivifycreateobjetiveview.png",
+          "/screenshots/sharedcalendar/objetivifyhome.png",
+          "/screenshots/sharedcalendar/objetivifylistcalendars.png",
+        ],
       },
       {
         title: "Incorrect Password Storage",
@@ -148,6 +182,15 @@ export const translations = {
         link: "https://github.com/ConcatenateLine/incorrect-password-storage/releases",
         repository:
           "https://github.com/ConcatenateLine/incorrect-password-storage",
+        slug: "incorrect-password-storage",
+        screenshots: [
+          "/screenshots/incorrectpasswordsave/configurationview.png",
+          "/screenshots/incorrectpasswordsave/dashboardview.png",
+          "/screenshots/incorrectpasswordsave/dashboardviewalter.png",
+          "/screenshots/incorrectpasswordsave/homelistview.png",
+          "/screenshots/incorrectpasswordsave/homeview.png",
+          "/screenshots/incorrectpasswordsave/lockview.png",
+        ],
       },
       {
         title: "CONCERT CHAOS",
@@ -159,6 +202,16 @@ export const translations = {
         technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Canvas"],
         link: "https://concatenateline.github.io/concert-chaos",
         repository: "https://github.com/ConcatenateLine/concert-chaos",
+        slug: "concert-chaos",
+        screenshots: [
+          "/screenshots/concertchaos/concertchaosabout.png",
+          "/screenshots/concertchaos/concertchaosboard.png",
+          "/screenshots/concertchaos/concertchaosboardb.png",
+          "/screenshots/concertchaos/concertchaosboardc.png",
+          "/screenshots/concertchaos/concertchaosboardd.png",
+          "/screenshots/concertchaos/concertchaosdashboard.png",
+          "/screenshots/concertchaos/concertchaosscores.png",
+        ],
       },
       {
         title: "PORTFOLIO WITH WINDSURF",
@@ -170,6 +223,8 @@ export const translations = {
         technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
         link: "https://concatenateline.github.io/portafolio-site/",
         repository: "https://github.com/ConcatenateLine/portafolio-site",
+        slug: "portfolio-with-windsurf",
+        screenshots: [],
       },
       {
         title: "FORGOTTEN PORTFOLIO",
@@ -181,6 +236,8 @@ export const translations = {
         technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
         link: "https://concatenateline.github.io/old-portafolio-site/",
         repository: "https://github.com/ConcatenateLine/old-portafolio-site",
+        slug: "forgotten-portafolio",
+        screenshots: [],
       },
     ],
     footer: {
@@ -216,6 +273,11 @@ export const translations = {
         link: "https://fullstackopen.com/en/",
       },
     ],
+    buttons: {
+      gitHub: "View on GitHub",
+      live: "View Live",
+      return: "Return to projects",
+    },
   },
   es: {
     header: {
@@ -226,6 +288,12 @@ export const translations = {
         bureau: "La Gaceta de Innovación & Proyectos",
         cloud: "Crónicas Profesionales",
         tech: "El Telégrafo Tech & Bytes de Vida",
+      },
+      departmentsTitles: {
+        bureau:
+          "LA CRÓNICA DEL DESARROLLADOR - La Gaceta de Innovación & Proyectos",
+        cloud: "LA CRÓNICA DEL DESARROLLADOR - Crónicas Profesionales",
+        tech: "LA CRÓNICA DEL DESARROLLADOR - El Telégrafo Tech & Bytes de Vida",
       },
       nav: {
         home: "Inicio",
@@ -334,6 +402,15 @@ export const translations = {
         technologies: ["React", "Laravel", "MariaDB", "Docker Compose"],
         link: "https://github.com/ConcatenateLine/",
         repository: "https://github.com/ConcatenateLine/",
+        slug: "transporttl",
+        screenshots: [
+          "/screenshots/transport/customdashboard.png",
+          "/screenshots/transport/customerdashboard.png",
+          "/screenshots/transport/driverdashboard.png",
+          "/screenshots/transport/routeoptimizate.png",
+          "/screenshots/transport/routeoptimizated.png",
+          "/screenshots/transport/transporttl.png",
+        ],
       },
       {
         title: "PrintTL",
@@ -345,6 +422,13 @@ export const translations = {
         technologies: ["Flet", "FastAPI", "SQLite", "Python"],
         link: "https://github.com/ConcatenateLine/Printl",
         repository: "https://github.com/ConcatenateLine/Printl",
+        slug: "printtl",
+        screenshots: [
+          "/screenshots/printl/printldomainspermissions.png",
+          "/screenshots/printl/printlprinters.png",
+          "/screenshots/printl/printlservicemanager.png",
+          "/screenshots/printl/printtlhome.png",
+        ],
       },
       {
         title: "Objetivify",
@@ -356,6 +440,18 @@ export const translations = {
         technologies: ["Django", "AWS", "PostgreSQL", "Render"],
         link: "https://aboutpython.onrender.com/",
         repository: "https://github.com/ConcatenateLine/AboutPython",
+        slug: "objetivify",
+        screenshots: [
+          "/screenshots/sharedcalendar/objetivifycalendarview.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewalter.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewmodal.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewobjective.png",
+          "/screenshots/sharedcalendar/objetivifycalendarviewobjectivealter.png",
+          "/screenshots/sharedcalendar/objetivifycreatecalendarview.png",
+          "/screenshots/sharedcalendar/objetivifycreateobjetiveview.png",
+          "/screenshots/sharedcalendar/objetivifyhome.png",
+          "/screenshots/sharedcalendar/objetivifylistcalendars.png",
+        ],
       },
       {
         title: "Incorrect Password Storage",
@@ -368,6 +464,15 @@ export const translations = {
         link: "https://github.com/ConcatenateLine/incorrect-password-storage/releases",
         repository:
           "https://github.com/ConcatenateLine/incorrect-password-storage",
+        slug: "incorrect-password-storage",
+        screenshots: [
+          "/screenshots/incorrectpasswordsave/configurationview.png",
+          "/screenshots/incorrectpasswordsave/dashboardview.png",
+          "/screenshots/incorrectpasswordsave/dashboardviewalter.png",
+          "/screenshots/incorrectpasswordsave/homelistview.png",
+          "/screenshots/incorrectpasswordsave/homeview.png",
+          "/screenshots/incorrectpasswordsave/lockview.png",
+        ],
       },
       {
         title: "CONCERT CHAOS",
@@ -379,6 +484,16 @@ export const translations = {
         technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Canvas"],
         link: "https://concatenateline.github.io/concert-chaos",
         repository: "https://github.com/ConcatenateLine/concert-chaos",
+        slug: "concert-chaos",
+        screenshots: [
+          "/screenshots/concertchaos/concertchaosabout.png",
+          "/screenshots/concertchaos/concertchaosboard.png",
+          "/screenshots/concertchaos/concertchaosboardb.png",
+          "/screenshots/concertchaos/concertchaosboardc.png",
+          "/screenshots/concertchaos/concertchaosboardd.png",
+          "/screenshots/concertchaos/concertchaosdashboard.png",
+          "/screenshots/concertchaos/concertchaosscores.png",
+        ],
       },
       {
         title: "PORTAFOLIO CON WINDSURF",
@@ -390,6 +505,8 @@ export const translations = {
         technologies: ["Astro", "Tailwind", "Windsurf", "Codeium"],
         link: "https://concatenateline.github.io/portafolio-site/",
         repository: "https://github.com/ConcatenateLine/portafolio-site",
+        slug: "portfolio-with-windsurf",
+        screenshots: [],
       },
       {
         title: "PORTAFOLIO OLVIDADO",
@@ -401,6 +518,8 @@ export const translations = {
         technologies: ["Astro", "Tailwind", "TypeScript", "VSCode"],
         link: "https://concatenateline.github.io/old-portafolio-site/",
         repository: "https://github.com/ConcatenateLine/old-portafolio-site",
+        slug: "forgotten-portafolio",
+        screenshots: [],
       },
     ],
     footer: {
@@ -436,5 +555,10 @@ export const translations = {
         link: "https://fullstackopen.com/es/",
       },
     ],
+    buttons: {
+      gitHub: "Ver en GitHub",
+      live: "Ver en linea",
+      return: "Regresar a proyectos",
+    },
   },
 };

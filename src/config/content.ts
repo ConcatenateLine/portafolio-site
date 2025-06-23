@@ -1,6 +1,6 @@
 export const siteContent = {
     meta: {
-        title: "The Software Chronicle",
+        title: "The Developer Chronicle",
         language: "en",
     },
     socials: {

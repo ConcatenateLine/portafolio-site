@@ -1,54 +1,27 @@
 ---
-import "../styles/vintage.css";
-import Masthead from "../components/Masthead.astro";
 import Footer from "../components/Footer.astro";
 import ExperienceSection from "../components/Experience.astro";
-import ThemeToggle from "../components/ThemeToggle.astro";
-import { siteContent } from "../config/content";
 import AcademicDispatch from "../components/AcademicDispatch.astro";
 import TechnicalForecast from "../components/TechnicalForecast.astro";
-import FooterNotice from "../components/FooterNotice.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<title>{siteContent.meta.title} - Experience</title>
-	</head>
-	<body class="vintage-bg">
-		<div class="vintage-corner-topright"></div>
+<Layout title="header.departmentsTitles.cloud">
+  <section>
+    <TechnicalForecast />
 
-		<Masthead>
-			<ThemeToggle slot="right-top" />
-		</Masthead>
+    <!-- Vintage Separator with Ornaments -->
+    <div class="flex items-center justify-center my-8">
+      <div class="vintage-ornament"></div>
+      <div class="vintage-separator mx-4 flex-grow"></div>
+      <div class="vintage-ornament"></div>
+    </div>
 
-		<!-- Main Content -->
-		<main class="max-w-7xl mx-auto vintage-secondary-bg p-8">
-			<TechnicalForecast />
+    <!-- Experience Section -->
+    <ExperienceSection />
 
-			<!-- Vintage Separator with Ornaments -->
-			<div class="flex items-center justify-center my-8">
-				<div class="vintage-ornament"></div>
-				<div class="vintage-separator mx-4 flex-grow"></div>
-				<div class="vintage-ornament"></div>
-			</div>
+    <AcademicDispatch />
 
-			<!-- Experience Section -->
-			<ExperienceSection />
-
-			<AcademicDispatch />
-
-			<Footer pageNumber={2} />
-
-			<FooterNotice />
-		</main>
-		<div class="vintage-corner-bottomleft"></div>
-	</body>
-</html>
+    <Footer pageNumber={2} />
+  </section>
+</Layout>
