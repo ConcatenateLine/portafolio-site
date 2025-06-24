@@ -36,9 +36,12 @@ function updateThemeText(theme: string) {
     }
 }
 
-// Initialize theme and text
-const currentTheme = getThemePreference();
-document.documentElement.setAttribute('data-theme', currentTheme);
+// Initialize theme and text - check if theme is already set
+let currentTheme = document.documentElement.getAttribute('data-theme');
+if (!currentTheme) {
+    currentTheme = getThemePreference();
+    document.documentElement.setAttribute('data-theme', currentTheme);
+}
 updateThemeText(currentTheme);
 
 // Theme toggle functionality

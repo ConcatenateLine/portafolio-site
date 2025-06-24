@@ -19,5 +19,8 @@ export function setThemePreference(theme: 'light' | 'dark') {
     if (typeof window !== 'undefined') {
         localStorage.setItem(THEME_KEY, theme);
         document.documentElement.setAttribute('data-theme', theme);
+        
+        // Set cookie for server-side detection
+        document.cookie = `${THEME_KEY}=${theme}; path=/; max-age=31536000; SameSite=Lax`;
     }
 }

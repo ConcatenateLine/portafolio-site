@@ -8,19 +8,54 @@ import Masthead from "../components/Masthead.astro";
 import { siteContent } from "../config/content";
 import FooterNotice from "../components/FooterNotice.astro";
 import { t } from "../utils/translateUtils";
+
 const { title } = Astro.props;
+
+// Server-side theme detection
+let initialTheme = 'light';
+if (Astro.request.headers.get('cookie')) {
+    const cookieHeader = Astro.request.headers.get('cookie');
+    if (cookieHeader) {
+        const cookies = cookieHeader.split(';').reduce((acc, cookie) => {
+            const [key, value] = cookie.trim().split('=');
+            acc[key] = value;
+            return acc;
+        }, {} as Record<string, string>);
+        
+        if (cookies['theme-preference']) {
+            initialTheme = cookies['theme-preference'];
+        }
+    }
+}
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={initialTheme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/cl=.png" />
+    <link rel="icon" type="image/svg+xml" href="/portafolio-site/cl=favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title data-translate={title ? title : "header.title"}>
       {siteContent.meta.title + " - " + t("header.title")}
     </title>
+    
+    <!-- Prevent theme flash with inline script -->
+    <script is:inline>
+      // Immediately apply theme to prevent flash
+      (function() {
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        
+        // Also check localStorage for consistency
+        if (typeof localStorage !== 'undefined') {
+          const storedTheme = localStorage.getItem('theme-preference');
+          if (storedTheme && storedTheme !== theme) {
+            document.documentElement.setAttribute('data-theme', storedTheme);
+          }
+        }
+      })();
+    </script>
   </head>
 
   <body class="vintage-bg">
